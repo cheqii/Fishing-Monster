@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - FishUi
+  - Fish
+  tags:
   - Water
   layers:
   - Default
