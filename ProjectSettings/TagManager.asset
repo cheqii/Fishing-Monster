@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FishUi
   - Fish
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Player
+    uniqueID: 284886865
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
