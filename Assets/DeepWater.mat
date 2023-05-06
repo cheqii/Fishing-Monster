@@ -34,7 +34,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _alpha: 0.31
+    - _alpha: 0.2
     m_Colors:
-    - _WaterColor: {r: 0, g: 0.3320753, b: 0.6415094, a: 1}
+    - _WaterColor: {r: 0.37308648, g: 0.47779316, b: 0.754717, a: 1}
   m_BuildTextureStacks: []
