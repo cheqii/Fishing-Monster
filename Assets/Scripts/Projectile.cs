@@ -6,12 +6,21 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Transform throwingPoint;
     [SerializeField] private Rigidbody2D gameObjRb;
 
-    private void Update()
+    [SerializeField] private bool isFishing = false;
+
+    public bool IsFishing
     {
-        ClickBait();
+        get => isFishing;
+        set => isFishing = value;
     }
     
-    void ClickBait()
+    private void Update()
+    {
+        if(!isFishing) ClickBait();
+        else Debug.Log("You are now fishing");
+    }
+    
+    public void ClickBait()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -21,10 +30,12 @@ public class Projectile : MonoBehaviour
 
             if (hit.collider != null)
             {
+                
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
                 Rigidbody2D baitFishing = Instantiate(gameObjRb, throwingPoint.position, Quaternion.identity);
                 
                 baitFishing.velocity = projectileVelocity;
+                isFishing = true;
             }
         }
     }
