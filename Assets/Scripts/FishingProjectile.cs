@@ -1,12 +1,17 @@
-
 using UnityEngine;
 
 public class FishingProjectile : MonoBehaviour
 {
     [SerializeField] private Transform fishingPoint;
+    public Transform FishingPoint => fishingPoint;
     [SerializeField] private Rigidbody2D baitRb;
 
     private void Update()
+    {
+        ClickBait();
+    }
+    
+    void ClickBait()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -23,7 +28,7 @@ public class FishingProjectile : MonoBehaviour
             }
         }
     }
-
+    
     Vector2 CalculateProjectile(Vector2 origin, Vector2 target, float time)
     {
         Vector2 distance = target - origin;

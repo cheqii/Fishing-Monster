@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 1298704671}
   m_Layer: 0
   m_Name: water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,12 +532,12 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_SurfaceLevel: 0.3
-  m_Density: 5
+  m_SurfaceLevel: 0.4
+  m_Density: 2
   m_LinearDrag: 5
   m_AngularDrag: 5
   m_FlowAngle: 0
-  m_FlowMagnitude: 3
+  m_FlowMagnitude: 0
   m_FlowVariation: 0
 --- !u!61 &1298704672
 BoxCollider2D:
