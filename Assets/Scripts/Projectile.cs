@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class FishingProjectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
-    [SerializeField] private Transform fishingPoint;
-    public Transform FishingPoint => fishingPoint;
-    [SerializeField] private Rigidbody2D baitRb;
+    [SerializeField] private Transform throwingPoint;
+    [SerializeField] private Rigidbody2D gameObjRb;
 
     private void Update()
     {
@@ -21,8 +21,8 @@ public class FishingProjectile : MonoBehaviour
 
             if (hit.collider != null)
             {
-                Vector2 projectileVelocity = CalculateProjectile(fishingPoint.position, hit.point, 1f);
-                Rigidbody2D baitFishing = Instantiate(baitRb, fishingPoint.position, Quaternion.identity);
+                Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
+                Rigidbody2D baitFishing = Instantiate(gameObjRb, throwingPoint.position, Quaternion.identity);
                 
                 baitFishing.velocity = projectileVelocity;
             }
