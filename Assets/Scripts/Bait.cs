@@ -1,21 +1,10 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Bait : MonoBehaviour
 {
-    private Transform baitTransform;
-    public Transform BaitTransform
-    {
-        get => baitTransform;
-        set => baitTransform = value;
-    }
-
+    [Header("Line Renderer")]
     private LineRenderer _line;
-    [SerializeField] private Transform[] points;
-    
-    
+    [SerializeField] private Transform[] rodPoints;
 
     private void Awake()
     {
@@ -35,15 +24,16 @@ public class Bait : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
-            Makeline();
+            MakeRodline();
+            if(Input.GetMouseButtonDown(1)) Destroy(this.gameObject);
         }
     }
 
-    private void Makeline()
+    private void MakeRodline()
     {
-        Transform begin = points[0];
-        Transform end = points[1];
-        _line.positionCount = points.Length;
+        Transform begin = rodPoints[0];
+        Transform end = rodPoints[1];
+        _line.positionCount = rodPoints.Length;
         _line.SetPosition(0, begin.position);
         _line.SetPosition(1, end.position);
     }
