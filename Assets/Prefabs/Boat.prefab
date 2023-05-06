@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7477875775165308956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: 0, z: 0}
+  m_LocalPosition: {x: 0.27, y: 0.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 7477875775302288285}
   - component: {fileID: 7477875775302288274}
   - component: {fileID: 7477875775302288275}
-  - component: {fileID: 7477875775302288272}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -165,18 +164,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &7477875775302288272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7477875775302288273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717dd34157640624999e2ce7d17888a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishingPoint: {fileID: 7477875775165308959}
-  baitRb: {fileID: 4366506221460313176, guid: 7683bf2247873494f8baab603ca2b73c, type: 3}
+  m_Constraints: 4
