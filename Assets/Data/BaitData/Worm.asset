@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ef27a56ce07094f9de5771f48c1745, type: 3}
   m_Name: Worm
   m_EditorClassIdentifier: 
-  baitType: 0
+  baitType: 2
   baitSprite: {fileID: 0}

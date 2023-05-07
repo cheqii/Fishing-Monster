@@ -249,6 +249,7 @@ MonoBehaviour:
   rodPoints:
   - {fileID: 0}
   - {fileID: 7842425446443308047}
+  baitData: {fileID: 0}
 --- !u!120 &6273453966797464153
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -269,7 +270,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
