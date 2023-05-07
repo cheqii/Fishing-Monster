@@ -14,21 +14,21 @@ public class CoinSystem : MonoBehaviour
 
     private void Start()
     {
-        coinText.text = currentMoney.ToString() + " $";
-        PlayerPrefs.GetInt("money", 0);
+        currentMoney = PlayerPrefs.GetInt("money", 0);
+        coinText.text = currentMoney + " $";
     }
 
     public void IncreaseMoney(int value)
     {
         currentMoney += value;
-        coinText.text = currentMoney.ToString() + " $";
+        coinText.text = currentMoney + " $";
         PlayerPrefs.SetInt("money", currentMoney);
     }
 
     public void DecreaseMoney(int value)
     {
         if (currentMoney > 0) currentMoney -= value;
-        coinText.text = currentMoney.ToString() + " $";
+        coinText.text = currentMoney + " $";
         PlayerPrefs.SetInt("money", currentMoney);
     }
 }
