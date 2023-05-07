@@ -1392,10 +1392,13 @@ MonoBehaviour:
   _fishCatch: {fileID: 1538232376}
   progressSpeed: 20
   progressBar: {fileID: 1371874231}
-  elctricBar: {fileID: 916969230}
+  electricBar: {fileID: 916969230}
   _particle: {fileID: 1499706011}
-  elctricBarRecoveryRate: 1
-  elctricResistance: 0
+  electricBarRecoveryRate: 1.05
+  electricResistance: 0
+  electricRecoveryDelay: 2.51
+  elctricDelayTimer: 0
+  elctricCanRecov: 1
 --- !u!1 &1201396814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,7 +1916,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 33a53ddb63af9554ab4102050e4f71e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1937,8 +1940,8 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
-  m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MinParticleSize: 0.04
+  m_MaxParticleSize: 10
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -1973,7 +1976,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1499706008}
   serializedVersion: 8
   lengthInSec: 1
-  simulationSpeed: 5
+  simulationSpeed: 10
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -2216,7 +2219,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2532,7 +2535,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -2798,7 +2801,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2916,18 +2919,18 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          inSlope: -1
+          outSlope: -1
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: -2
-          outSlope: -2
-          tangentMode: 0
+          inSlope: -1
+          outSlope: -1
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0

@@ -9,23 +9,28 @@ public class FishingBar : MonoBehaviour
     [SerializeField]  private float progressSpeed = 20;
 
     [SerializeField] private Slider progressBar;
-    [SerializeField] private Slider elctricBar;
+    [SerializeField] private Slider electricBar;
     [SerializeField] private ParticleSystem _particle;
     
     [Range(0,5)]
-    [SerializeField] private float elctricBarRecoveryRate;
+    [SerializeField] private float electricBarRecoveryRate;
     
     [Range(-1,1)]
-    [SerializeField] private float elctricResistance;
+    [SerializeField] private float electricResistance;
 
+    [Range(0,5)]
+    [SerializeField] private float electricRecoveryDelay = 1f;
+    [SerializeField] private float elctricDelayTimer ;
 
-
+    [SerializeField] private bool elctricCanRecov = true;
 
         
         
     // Start is called before the first frame update
     void Start()
     {
+        elctricDelayTimer = electricRecoveryDelay;
+        progressBar.value = 0.4f;
     }
 
     // Update is called once per frame
@@ -36,10 +41,12 @@ public class FishingBar : MonoBehaviour
             progressBar.value += (Time.deltaTime/100)*progressSpeed ;
             
             //fish shock
-            if (Input.GetKeyDown(KeyCode.V))
+            if (Input.GetKeyDown(KeyCode.V) && electricBar.value > 0)
             {
-                elctricBar.value -= 1;
-                progressBar.value += progressBar.maxValue / 100 * elctricResistance;
+                electricBar.value -= 1;
+                progressBar.value += progressBar.maxValue / 100 * electricResistance;
+                elctricDelayTimer = electricRecoveryDelay;
+
                 _particle.Play();
 
             }
@@ -51,13 +58,31 @@ public class FishingBar : MonoBehaviour
             //fish shock
             if (Input.GetKeyDown(KeyCode.V))
             {
+                electricBar.value -= 1;
                 progressBar.value -= progressBar.maxValue / 100;
+                elctricDelayTimer = electricRecoveryDelay;
+                //shock urslef
             }
         }
-        
-        elctricBar.value += (Time.deltaTime * elctricBarRecoveryRate);
 
-        
-        
+        if (elctricCanRecov == true)
+        {
+            electricBar.value += (Time.deltaTime * electricBarRecoveryRate);
+        }
+
+
+        //election
+        elctricDelayTimer -= Time.deltaTime;
+        if (elctricDelayTimer < 0)
+        {
+            elctricCanRecov = true;
+        }
+        else
+        {
+            elctricCanRecov = false;
+        }
     }
+    
+   
+
 }
