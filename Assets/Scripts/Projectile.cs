@@ -47,23 +47,20 @@ public class Projectile : MonoBehaviour
             if (hit.collider != null)
             {
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
-                if (FindObjectOfType<SwitchTool>().ToolTypes == Tools.Rod)
+                if (SwitchTool.Instance.ToolTypes == Tools.Rod)
                 {
                     Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
                     baitFishing.velocity = projectileVelocity;
                     baitGameObjects[0] = baitFishing;
                     baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
                     IsFishing = true;
-                    StartCoroutine(delayCollider());
+                    StartCoroutine(DelayCollider());
                 }
-                else if (FindObjectOfType<SwitchTool>().ToolTypes == Tools.Bomb)
+                else if (SwitchTool.Instance.ToolTypes == Tools.Bomb)
                 {
                     Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
                     bomb.velocity = projectileVelocity;
                 }
-                
-                
-                
             }
         }
         else Debug.Log("Not Rod");
@@ -73,7 +70,7 @@ public class Projectile : MonoBehaviour
     }
 
 
-    IEnumerator delayCollider()
+    IEnumerator DelayCollider()
     {
         GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(2);

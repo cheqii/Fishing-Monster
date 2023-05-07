@@ -9,13 +9,13 @@ using UnityEngine.UI;
 public class ShopSystem : MonoBehaviour
 {
     private CoinSystem coinSystem;
+    
     [SerializeField] private GameObject[] items;
-
     [SerializeField] private ItemData[] itemData;
 
     private void Start()
     {
-        coinSystem = GetComponent<CoinSystem>();
+        coinSystem = CoinSystem.Instance;
         SetupShop();
     }
 
@@ -37,15 +37,15 @@ public class ShopSystem : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
+            var button = items[i].transform.Find("Button");
             if (coinSystem.CurrentMoney >= itemData[i].price)
             {
-                items[i].transform.Find("Button").GetComponentInChildren<Image>().color = Color.green;
+                button.GetComponent<Image>().color = Color.green;
             }
             else
             {
-                
-                items[i].transform.Find("Button").GetComponentInChildren<Image>().color = Color.red;
-                items[i].transform.Find("Button").GetComponentInChildren<TextMeshProUGUI>().text = "no money";
+                button.GetComponent<Image>().color = Color.red;
+                button.GetComponentInChildren<TextMeshProUGUI>().text = "no money";
             }
         }
     }

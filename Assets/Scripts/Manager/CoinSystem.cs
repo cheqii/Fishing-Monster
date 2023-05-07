@@ -1,8 +1,10 @@
+using System;
 using TMPro;
 using UnityEngine;
 
-public class CoinSystem : MonoBehaviour
+public class CoinSystem : Singleton<CoinSystem>
 {
+
     [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private int currentMoney;
 

@@ -48,7 +48,6 @@ public class Bait : MonoBehaviour
                 isRealBaitYet = true;
             }
             
-            //_projectile.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (col.CompareTag("Boat"))

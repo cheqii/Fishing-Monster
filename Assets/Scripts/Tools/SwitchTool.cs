@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum Tools
 {
@@ -8,7 +7,7 @@ public enum Tools
     Bomb,
     Hand
 }
-public class SwitchTool : MonoBehaviour
+public class SwitchTool : Singleton<SwitchTool>
 {
     [SerializeField] private Tools toolTypes = Tools.Rod;
     [SerializeField] private TextMeshProUGUI text;
@@ -22,7 +21,6 @@ public class SwitchTool : MonoBehaviour
     private void Start()
     {
         text.text = toolTypes.ToString();
-        text.GetComponentInParent<Image>().color = Color.red;
     }
 
     public void Switch()
@@ -31,20 +29,17 @@ public class SwitchTool : MonoBehaviour
         {
             toolTypes = Tools.Bomb;
             text.text = "Bomb";
-            text.GetComponentInParent<Image>().color = Color.yellow;
         }
             
         else if (toolTypes == Tools.Bomb)
         {
             toolTypes = Tools.Hand;
             text.text = "Hand";
-            text.GetComponentInParent<Image>().color = Color.white;
         }
         else
         {
             toolTypes = Tools.Rod;
             text.text = "Rod";
-            text.GetComponentInParent<Image>().color = Color.red;
         }
     }
 }
