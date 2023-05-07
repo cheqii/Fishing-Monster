@@ -12,6 +12,10 @@ public class Fish : MonoBehaviour
 
     public float fishExtraSpeed = 1;
 
+    private CoinBomb coinBomb;
+
+    // [SerializeField] private int minCoinDrop = 1;
+    // [SerializeField] private int maxCoinDrop = 10;
 
     public enum FishDirection
     {
@@ -24,6 +28,8 @@ public class Fish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        coinBomb = GetComponent<CoinBomb>();
+        
         fishMoveSpeed = _fishData.FishMoveSpeed + Random.Range(0, _fishData.FishMoveSpeed) ;
 
         
@@ -43,6 +49,7 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckFish();
         if (_Direction == FishDirection.left)
         {
             this.transform.position += Vector3.left * (Time.deltaTime * fishMoveSpeed *  fishExtraSpeed);
@@ -57,5 +64,15 @@ public class Fish : MonoBehaviour
     public FishData GetFishData()
     {
         return _fishData;
+    }
+
+    void CheckFish()
+    {
+        if (gameObject != null) return;
+
+        // int coinCollect = Random.Range(minCoinDrop, maxCoinDrop);
+        //
+        // coinBomb.DropCoins(coinCollect);
+        // Debug.Log("Coin Drop Bombbbbb");
     }
 }

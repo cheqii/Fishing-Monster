@@ -24,7 +24,6 @@ public class Bait : MonoBehaviour
     private void Start()
     {
         _rod = FindObjectOfType<Rod>().GetComponent<Rod>();
-
     }
 
     private void OnTriggerEnter2D(Collider2D col)

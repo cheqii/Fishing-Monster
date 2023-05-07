@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,10 +14,15 @@ public class FishRadar : MonoBehaviour
     private GameObject _bait;
     private bool isEating = false;
     private bool isDead = false;
+    
+    [SerializeField] private int minCoinDrop = 1;
+    [SerializeField] private int maxCoinDrop = 10;
+
+    private CoinBomb coinBomb;
 
     private void Start()
     {
-
+        coinBomb = GetComponentInParent<CoinBomb>();
         _fish = this.transform.parent.gameObject.GetComponent<Fish>();
         _fishData = _fish.GetFishData();
     }
@@ -152,6 +158,10 @@ public class FishRadar : MonoBehaviour
                 GameManager.Instance.DestroyGO(blood.gameObject, 10);
                 
                 Destroy(_fish.gameObject);
+                Debug.Log("fish hooked");
+                
+                int coinCollect = Random.Range(minCoinDrop, maxCoinDrop);
+                coinBomb.DropCoins(coinCollect);
             }
         }
      

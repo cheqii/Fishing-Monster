@@ -68,7 +68,7 @@ public class Rod : MonoBehaviour
 
             }
         }
-        else Debug.Log("Not Rod");
+        
 
        
         
