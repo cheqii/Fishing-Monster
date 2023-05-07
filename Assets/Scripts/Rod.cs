@@ -49,31 +49,24 @@ public class Rod : MonoBehaviour
             if (hit.collider != null)
             {
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
-                // if (SwitchTool.Instance.ToolTypes == Tools.Rod)
-                // {
-                //     Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
-                //     baitFishing.velocity = projectileVelocity;
-                //     baitGameObjects[0] = baitFishing;
-                //     baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
-                //     IsFishing = true;
-                //     StartCoroutine(DelayCollider());
-                // }
-                // else if (SwitchTool.Instance.ToolTypes == Tools.Bomb)
-                // {
-                //     Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
-                //     bomb.velocity = projectileVelocity;
-                // }
-                Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
-                baitFishing.GetComponent<Bait>().SetBait(this.baitData);
-                baitFishing.velocity = projectileVelocity;
-                baitGameObjects[0] = baitFishing;
-                baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
-                IsFishing = true;
+                if (SwitchTool.Instance.ToolTypes == Tools.Rod)
+                {
+                    Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
+                    baitFishing.GetComponent<Bait>().SetBait(this.baitData);
+                    baitFishing.velocity = projectileVelocity;
+                    baitGameObjects[0] = baitFishing;
+                    baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
+                    IsFishing = true;
+                    
+                    StartCoroutine(DelayCollider());
+                }
+                else if (SwitchTool.Instance.ToolTypes == Tools.Bomb)
+                {
+                    Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
+                    bomb.velocity = projectileVelocity;
+                }
 
-                
             }
-            StartCoroutine(DelayCollider());
-
         }
         else Debug.Log("Not Rod");
 
