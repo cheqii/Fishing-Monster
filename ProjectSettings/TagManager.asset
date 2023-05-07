@@ -7,6 +7,7 @@ TagManager:
   - FishUi
   - Fish
   - Water
+  - Boat
   layers:
   - Default
   - TransparentFX
