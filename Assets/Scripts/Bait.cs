@@ -5,7 +5,7 @@ public class Bait : MonoBehaviour
 {
     [Header("Line Renderer")]
     private LineRenderer _line;
-    [SerializeField] private Transform[] rodPoints;
+    public Transform[] rodPoints;
     private Projectile _projectile;
     
     private void Awake()

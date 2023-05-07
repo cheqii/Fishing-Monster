@@ -30,7 +30,7 @@ public class Fish : MonoBehaviour
         }
         else
         {
-            this.transform.position += Vector3.right * Time.deltaTime;
+            this.transform.position += Vector3.right * (Time.deltaTime * fishMoveSpeed);
 
         }
     }

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GreyFish
   m_EditorClassIdentifier: 
   FishName: GreyFish
-  FishMoveSpeed: 0.12
+  FishMoveSpeed: 1.76
   fishMoveDelay_ui: 0.2
   fishMoveSpeed_ui: {x: 0, y: 100}
   fishPhaseDelay_ui: 15
+  ProgressRate_ui: 0.2

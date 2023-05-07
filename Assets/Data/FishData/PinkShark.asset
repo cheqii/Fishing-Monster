@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PinkShark
   m_EditorClassIdentifier: 
   FishName: PinkShark
-  FishMoveSpeed: 0.72
+  FishMoveSpeed: 3.52
   fishMoveDelay_ui: 0.2
   fishMoveSpeed_ui: {x: 0, y: 100}
   fishPhaseDelay_ui: 15
+  ProgressRate_ui: 0.2
