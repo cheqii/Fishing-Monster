@@ -99,6 +99,7 @@ public class FishRadar : MonoBehaviour
         var blood = Instantiate(GameManager.Instance.blood, _fish.transform);
         blood.transform.localScale = _fish.transform.localScale * 2;
     }
+    
 
     private void Update()
     {
@@ -122,6 +123,14 @@ public class FishRadar : MonoBehaviour
         
         while (true)
         {
+            if (GameManager.Instance.fishIsEating == false)
+            {
+                _fish.GetComponent<Fish>().enabled = true;
+                break;
+
+            }
+            
+            
             if (isEating == true && t2 == null && isDead == false)
             {
                 StartCoroutine(fishDissolve(_fish));
