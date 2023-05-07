@@ -5,7 +5,12 @@ using UnityEngine.Serialization;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private Transform throwingPoint;
-    [SerializeField] private Rigidbody2D gameObjRb;
+    
+    [Header("Fishing point")]
+    [SerializeField] private Rigidbody2D fishingBaitPoint;
+    
+    [Header("Bomb point")]
+    [SerializeField] private Rigidbody2D bombPoint;
 
     [SerializeField] private bool isFishing = false;
 
@@ -16,7 +21,7 @@ public class Projectile : MonoBehaviour
         get => isFishing;
         set => isFishing = value;
     }
-    
+
     private void Update()
     {
         if(!isFishing) ClickBait();
@@ -27,7 +32,7 @@ public class Projectile : MonoBehaviour
             Vector2 projectileVelocity = CalculateProjectile(baitGameObjects[0].transform.position, transform.position, 1f);
             baitGameObjects[0].velocity = projectileVelocity;
             FindObjectOfType<RealBait>().Cancel = true;
-            //baitGameObjects[0] = null;
+            
         }
     }
     
@@ -42,16 +47,26 @@ public class Projectile : MonoBehaviour
             if (hit.collider != null)
             {
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
-                Rigidbody2D baitFishing = Instantiate(gameObjRb, throwingPoint.position, Quaternion.identity);
-                baitFishing.velocity = projectileVelocity;
-                baitGameObjects[0] = baitFishing;
-                baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
-                IsFishing = true;
-
-
-                StartCoroutine(delayCollider());
+                if (FindObjectOfType<SwitchTool>().ToolTypes == Tools.Rod)
+                {
+                    Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
+                    baitFishing.velocity = projectileVelocity;
+                    baitGameObjects[0] = baitFishing;
+                    baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
+                    IsFishing = true;
+                    StartCoroutine(delayCollider());
+                }
+                else if (FindObjectOfType<SwitchTool>().ToolTypes == Tools.Bomb)
+                {
+                    Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
+                    bomb.velocity = projectileVelocity;
+                }
+                
+                
+                
             }
         }
+        else Debug.Log("Not Rod");
 
        
         
