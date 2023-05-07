@@ -42,11 +42,19 @@ public class FishingManager : MonoBehaviour
         StartCoroutine(FishBehevior());
 
     }
+    
+    void OnEnable()
+    {
+        StartCoroutine(FishMove());
+        StartCoroutine(FishBehevior());
+    }
 
     // Update is called once per frame
     void Update()
     {
-
+      
+        
+        
         if (reverseCatch == true)
         {
             catchUi.eulerAngles += new Vector3(0,0,Time.deltaTime * catchMovingSpeed);

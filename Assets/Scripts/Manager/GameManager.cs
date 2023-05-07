@@ -1,16 +1,30 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance { get; private set; }
+
+    public bool fishIsEating = false;
+
+    public GameObject blood;
+
+    private void Awake()
     {
-        
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DestroyGO(GameObject go, float delay)
     {
-        
+        Destroy(go, delay);
     }
 }

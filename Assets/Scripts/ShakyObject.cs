@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FloatingCamera : MonoBehaviour
+public class ShakyObject : MonoBehaviour
 {
     public float speed = 1f; // Adjust this value to control the speed of the camera's movement
     public float amplitude = 1f; // Adjust this value to control the height of the camera's movement

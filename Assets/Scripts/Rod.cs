@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Projectile : MonoBehaviour
+public class Rod : MonoBehaviour
 {
     [SerializeField] private Transform throwingPoint;
     
@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Rigidbody2D bombPoint;
 
     [SerializeField] private bool isFishing = false;
+    [SerializeField] private BaitData baitData;
 
     private Rigidbody2D[] baitGameObjects = new Rigidbody2D[2];
 
@@ -24,10 +25,11 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.fishIsEating == true) { return;}
+        
         if(!isFishing) ClickBait();
-
-
-        if (Input.GetMouseButtonDown(1) && baitGameObjects[0].GetComponent<Bait>().GetIsInWater() == true)
+        
+        if (Input.GetMouseButtonDown(1) && baitGameObjects[0] != null && baitGameObjects[0].GetComponent<Bait>().GetIsInWater() == true)
         {
             Vector2 projectileVelocity = CalculateProjectile(baitGameObjects[0].transform.position, transform.position, 1f);
             baitGameObjects[0].velocity = projectileVelocity;
@@ -47,21 +49,31 @@ public class Projectile : MonoBehaviour
             if (hit.collider != null)
             {
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
-                if (SwitchTool.Instance.ToolTypes == Tools.Rod)
-                {
-                    Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
-                    baitFishing.velocity = projectileVelocity;
-                    baitGameObjects[0] = baitFishing;
-                    baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
-                    IsFishing = true;
-                    StartCoroutine(DelayCollider());
-                }
-                else if (SwitchTool.Instance.ToolTypes == Tools.Bomb)
-                {
-                    Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
-                    bomb.velocity = projectileVelocity;
-                }
+                // if (SwitchTool.Instance.ToolTypes == Tools.Rod)
+                // {
+                //     Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
+                //     baitFishing.velocity = projectileVelocity;
+                //     baitGameObjects[0] = baitFishing;
+                //     baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
+                //     IsFishing = true;
+                //     StartCoroutine(DelayCollider());
+                // }
+                // else if (SwitchTool.Instance.ToolTypes == Tools.Bomb)
+                // {
+                //     Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
+                //     bomb.velocity = projectileVelocity;
+                // }
+                Rigidbody2D baitFishing = Instantiate(fishingBaitPoint, throwingPoint.position, Quaternion.identity);
+                baitFishing.GetComponent<Bait>().SetBait(this.baitData);
+                baitFishing.velocity = projectileVelocity;
+                baitGameObjects[0] = baitFishing;
+                baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
+                IsFishing = true;
+
+                
             }
+            StartCoroutine(DelayCollider());
+
         }
         else Debug.Log("Not Rod");
 
