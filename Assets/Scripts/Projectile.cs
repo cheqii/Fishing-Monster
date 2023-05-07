@@ -20,9 +20,8 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         if(!isFishing) ClickBait();
-        else Debug.Log("You are now fishing");
-        
-        
+
+
         if (Input.GetMouseButtonDown(1) && baitGameObjects[0].GetComponent<Bait>().GetIsInWater() == true)
         {
             Vector2 projectileVelocity = CalculateProjectile(baitGameObjects[0].transform.position, transform.position, 1f);
