@@ -50,9 +50,4 @@ public class BoatHp : MonoBehaviour
 
         
     }
-
-    public void CancleBool()
-    {
-        takedamage = false;
-    }
 }
