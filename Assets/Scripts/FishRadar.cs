@@ -11,6 +11,7 @@ public class FishRadar : MonoBehaviour
     [SerializeField] private Vector3 offset;
     private FishData _fishData;
     private GameObject _bait;
+    private bool isEating = false;
 
     private void Start()
     {
@@ -72,6 +73,7 @@ public class FishRadar : MonoBehaviour
 
     void EatBait(RealBait bait)
     {
+        isEating = true;
         bait.isEaten = true;
         GameManager.Instance.fishIsEating = true;
 
@@ -84,6 +86,11 @@ public class FishRadar : MonoBehaviour
         bait.GetComponent<ShakyObject>().enabled = true;
         
         StartCoroutine(EatBait(fish.transform, bait.transform));
+        
+        
+        //blood
+        var blood = Instantiate(GameManager.Instance.blood, _fish.transform);
+        //blood.GetComponent<ObjectFollow>().target = _fish.transform;
     }
 
     private void Update()
@@ -108,11 +115,19 @@ public class FishRadar : MonoBehaviour
         
         while (true)
         {
-            
-            var start = t1.transform.localPosition;
-            var target = t2.transform.localPosition + offset;
-            t1.transform.localPosition =  Vector3.Lerp(start, target,1);
+            if (isEating == true && t2 == null)
+            {
+                Destroy(_fish.gameObject);
+            }
+
+            if (t1 != null && t2 != null)
+            {
+                var start = t1.transform.localPosition;
+                var target = t2.transform.localPosition + offset;
+                t1.transform.localPosition =  Vector3.Lerp(start, target,1);
+            }
             yield return new WaitForSeconds(Time.deltaTime);
+
         }
 
     }

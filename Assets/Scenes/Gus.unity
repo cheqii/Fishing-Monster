@@ -5963,7 +5963,7 @@ PrefabInstance:
     - target: {fileID: 4030243535416457911, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
       propertyPath: baitData
       value: 
-      objectReference: {fileID: 11400000, guid: 60b982e263515504586002193b99513d, type: 2}
+      objectReference: {fileID: 11400000, guid: 1059e95745b35474f9342b3b17bd78e7, type: 2}
     - target: {fileID: 5776021834907930116, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
       propertyPath: m_Name
       value: Boat (1)
@@ -22214,6 +22214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishIsEating: 0
+  blood: {fileID: 7899304856270463718, guid: eb7e28fc389a5b443b454c3a0edb02b3, type: 3}
 --- !u!114 &1700841483
 MonoBehaviour:
   m_ObjectHideFlags: 0

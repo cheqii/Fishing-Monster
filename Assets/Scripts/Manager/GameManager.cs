@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public bool fishIsEating = false;
 
+    public GameObject blood;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
