@@ -43,6 +43,13 @@ public class FishingBar : MonoBehaviour
             GameManager.Instance.fishIsEating = false;
         }
         
+        if (progressBar.value == 0)
+        {
+            progressBar.value = 0.4f;
+
+            GameManager.Instance.fishIsEating = false;
+        }
+        
         
         if (_fishCatch.GetStayOn() == true)
         {

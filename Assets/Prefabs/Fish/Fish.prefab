@@ -332,4 +332,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fish: {fileID: 0}
-  offset: {x: 0, y: -1, z: 0}
+  offset: {x: 0, y: -0.5, z: 0}

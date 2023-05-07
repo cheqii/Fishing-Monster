@@ -156,6 +156,7 @@ MonoBehaviour:
   fishMoveSpeed: 0
   fishTexture: {fileID: -8328923581568760697, guid: a6e4f18c7a53c7541926c07cc89c9c50, type: 3}
   fishmesh: {fileID: 2100000, guid: 95f58b3f6fa7f9c4cab6be22f26e2915, type: 2}
+  newMat: {fileID: 0}
   fishExtraSpeed: 1
   _Direction: 0
 --- !u!1 &7217151697981387031
@@ -220,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fish: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 2, y: -2.67, z: 0}
 --- !u!1 &8155057881368664600
 GameObject:
   m_ObjectHideFlags: 0
