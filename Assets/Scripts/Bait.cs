@@ -59,6 +59,8 @@ public class Bait : MonoBehaviour
             Projectile[] projectiles = col.GetComponents<Projectile>();
             if (projectiles != null || isInWater == false)
             {
+                realBaitGameObject.GetComponent<RealBait>().enabled = false;
+                
                 _projectile.DeleteBait();
                 Debug.Log("hit boat");
                 

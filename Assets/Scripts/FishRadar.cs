@@ -9,7 +9,7 @@ public class FishRadar : MonoBehaviour
     [SerializeField] private Vector3 offset;
     private void OnTriggerEnter2D(Collider2D col)
     {
-        var bait = col.gameObject.GetComponent<Bait>();
+        var bait = col.gameObject.GetComponent<RealBait>();
         if (bait != null)
         {
             bait.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
