@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -137140533694478772}
   - component: {fileID: 6273453966797464153}
   - component: {fileID: 4577840870289314374}
+  - component: {fileID: 477205092074251261}
   m_Layer: 0
   m_Name: RealBait
   m_TagString: Untagged
@@ -345,5 +346,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d954f3e06615f4eb9ef0976e29676a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baitData: {fileID: 0}
   buoyancy: {fileID: 0}
   Cancel: 0
+  isEaten: 0
+--- !u!114 &477205092074251261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635138925761726667}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3014587324855d34fa1be2e24dff6c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  amplitude: 0.5
+  frequency: 20

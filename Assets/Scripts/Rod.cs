@@ -8,11 +8,9 @@ public class Rod : MonoBehaviour
     [SerializeField] private Rigidbody2D gameObjRb;
 
     [SerializeField] private bool isFishing = false;
-
-    private Rigidbody2D[] baitGameObjects = new Rigidbody2D[2];
-    
     [SerializeField] private BaitData baitData;
 
+    private Rigidbody2D[] baitGameObjects = new Rigidbody2D[2];
 
     public bool IsFishing
     {
@@ -22,7 +20,10 @@ public class Rod : MonoBehaviour
     
     private void Update()
     {
+        if (GameManager.Instance.fishIsEating == true) { return;}
+        
         if(!isFishing) ClickBait();
+        
         else Debug.Log("You are now fishing");
         
         

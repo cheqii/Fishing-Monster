@@ -36,6 +36,14 @@ public class FishingBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (progressBar.value == 1)
+        {
+            progressBar.value = 0.4f;
+
+            GameManager.Instance.fishIsEating = false;
+        }
+        
+        
         if (_fishCatch.GetStayOn() == true)
         {
             progressBar.value += (Time.deltaTime/100)*progressSpeed ;

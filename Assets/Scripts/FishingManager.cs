@@ -46,7 +46,9 @@ public class FishingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+      
+        
+        
         if (reverseCatch == true)
         {
             catchUi.eulerAngles += new Vector3(0,0,Time.deltaTime * catchMovingSpeed);
