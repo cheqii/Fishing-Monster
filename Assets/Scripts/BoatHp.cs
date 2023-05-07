@@ -42,12 +42,10 @@ public class BoatHp : MonoBehaviour
         takedamage = true;
         slider.value = _boatCurrentHp; // old hp before take damage
         _boatCurrentHp -= damage;
-        if (_boatCurrentHp <= 0)
+        if (slider.value <= 0)
         {
             fillImage.enabled = false;
             Destroy(boat);
         }
-
-        
     }
 }
