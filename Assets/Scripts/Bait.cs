@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bait : MonoBehaviour
@@ -5,10 +6,16 @@ public class Bait : MonoBehaviour
     [Header("Line Renderer")]
     private LineRenderer _line;
     [SerializeField] private Transform[] rodPoints;
-
+    private Projectile _projectile;
+    
     private void Awake()
     {
         _line = GetComponent<LineRenderer>();
+    }
+
+    private void Start()
+    {
+        _projectile = FindObjectOfType<Projectile>().GetComponent<Projectile>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -25,7 +32,12 @@ public class Bait : MonoBehaviour
         if (other.CompareTag("Water"))
         {
             MakeRodline();
-            if(Input.GetMouseButtonDown(1)) Destroy(this.gameObject);
+            if (Input.GetMouseButton(0)) GetComponent<Rigidbody2D>().AddForce(Vector2.down * 0.05f, ForceMode2D.Impulse);
+            if(Input.GetMouseButtonDown(1))
+            {
+                Destroy(this.gameObject);
+                _projectile.IsFishing = false;
+            }
         }
     }
 
