@@ -43,24 +43,25 @@ public class ShopSystem : MonoBehaviour
             }
             else
             {
+                
                 items[i].transform.Find("Button").GetComponentInChildren<Image>().color = Color.red;
+                items[i].transform.Find("Button").GetComponentInChildren<TextMeshProUGUI>().text = "no money";
             }
         }
     }
 
-    public void PurchaseItem()
+    public void PurchaseItem(int id)
     {
-        for (int i = 0; i < items.Length; i++)
+        if (coinSystem.CurrentMoney >= itemData[id].price)
         {
-            if (coinSystem.CurrentMoney >= itemData[i].price)
-            {
-                Debug.Log("Purchased Item id : " + itemData[i].itemId);
-                coinSystem.DecreaseMoney(itemData[i].price);
-            }
-            else
-            {
-                Debug.Log("Not Enough Money");
-            }
+            Debug.Log("Purchased Item id : " + itemData[id].itemId);
+            coinSystem.DecreaseMoney(itemData[id].price);
+        }
+        else
+        {
+            Debug.Log("Not Enough Money");
         }
     }
+
+    
 }
