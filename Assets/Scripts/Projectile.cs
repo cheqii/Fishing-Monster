@@ -23,10 +23,11 @@ public class Projectile : MonoBehaviour
         else Debug.Log("You are now fishing");
         
         
-        if (Input.GetMouseButtonDown(1) && baitGameObjects[0] && baitGameObjects[0].GetComponent<Bait>().GetIsInWater() == true)
+        if (Input.GetMouseButtonDown(1) && baitGameObjects[0].GetComponent<Bait>().GetIsInWater() == true)
         {
             Vector2 projectileVelocity = CalculateProjectile(baitGameObjects[0].transform.position, transform.position, 1f);
             baitGameObjects[0].velocity = projectileVelocity;
+            FindObjectOfType<RealBait>().Cancel = true;
             //baitGameObjects[0] = null;
         }
     }

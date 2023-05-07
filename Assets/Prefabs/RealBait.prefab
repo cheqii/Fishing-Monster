@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4846819350905742414}
   - component: {fileID: 4366506221460313176}
   - component: {fileID: -137140533694478772}
-  - component: {fileID: 628234072995653705}
   - component: {fileID: 6273453966797464153}
+  - component: {fileID: 4577840870289314374}
   m_Layer: 0
-  m_Name: bait
+  m_Name: RealBait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0.06132078, b: 0.06132078, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.007124901, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.07
+  m_Mass: 0.2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -134,7 +134,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6635138925761726667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -234,22 +234,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &628234072995653705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6635138925761726667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb34711595b39f459ced34aea2e9c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rodPoints:
-  - {fileID: 0}
-  - {fileID: 7842425446443308047}
-  RealBait: {fileID: 6635138925761726667, guid: 34acfd2190f947c46a71112ad9689010, type: 3}
 --- !u!120 &6273453966797464153
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -349,3 +333,16 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 1
+--- !u!114 &4577840870289314374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635138925761726667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d954f3e06615f4eb9ef0976e29676a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buoyancy: {fileID: 0}

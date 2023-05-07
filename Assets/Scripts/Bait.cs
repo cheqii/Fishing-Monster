@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bait : MonoBehaviour
@@ -8,7 +10,12 @@ public class Bait : MonoBehaviour
     public Transform[] rodPoints;
     private Projectile _projectile;
     private bool createLine = false;
-    private bool isInWater;
+    [SerializeField] private bool isInWater;
+
+    [SerializeField] private GameObject RealBait;
+    [SerializeField] private GameObject realBaitGameObject;
+
+    private bool isRealBaitYet = false;
     private void Awake()
     {
         _line = GetComponent<LineRenderer>();
@@ -31,8 +38,21 @@ public class Bait : MonoBehaviour
             GetComponent<TrailRenderer>().enabled = false;
             createLine = true;
 
+            if (isRealBaitYet == false)
+            {
+                var _realBait = Instantiate(RealBait, transform.position, Quaternion.identity);
+                realBaitGameObject = _realBait;
+                _realBait.GetComponent<RealBait>().buoyancy = this.transform;
+                _realBait.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
+                StartCoroutine(setRealBait(_realBait.GetComponent<LineRenderer>()));
+                isRealBaitYet = true;
+            }
+            
             //_projectile.GetComponent<BoxCollider2D>().enabled = true;
         }
+
+       
+
 
         if (col.CompareTag("Boat"))
         {
@@ -41,8 +61,21 @@ public class Bait : MonoBehaviour
             {
                 _projectile.DeleteBait();
                 Debug.Log("hit boat");
+                
+                Destroy(realBaitGameObject);
                 Destroy(this.gameObject);
             }
+        }
+    }
+    
+    
+    
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Water"))
+        {
+            isInWater = true;
+
         }
     }
 
@@ -72,5 +105,16 @@ public class Bait : MonoBehaviour
     public bool GetIsInWater()
     {
         return isInWater;
+    }
+
+    IEnumerator setRealBait(LineRenderer _lineRenderer)
+    {
+        while (true)
+        {
+            _lineRenderer.positionCount = 2;
+            _lineRenderer.SetPosition(0, transform.position);
+            _lineRenderer.SetPosition(1,_lineRenderer.transform.position );
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
     }
 }
