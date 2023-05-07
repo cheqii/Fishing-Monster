@@ -7,7 +7,8 @@ public class Bait : MonoBehaviour
     private LineRenderer _line;
     public Transform[] rodPoints;
     private Projectile _projectile;
-    
+    private bool createLine = false;
+    private bool isInWater;
     private void Awake()
     {
         _line = GetComponent<LineRenderer>();
@@ -16,28 +17,46 @@ public class Bait : MonoBehaviour
     private void Start()
     {
         _projectile = FindObjectOfType<Projectile>().GetComponent<Projectile>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        
         if(col.CompareTag("Water"))
         {
+            isInWater = true;
+            
             Debug.Log("Bait triggered water");
             GetComponent<TrailRenderer>().enabled = false;
+            createLine = true;
+
+            //_projectile.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if (col.CompareTag("Boat"))
+        {
+            Projectile[] projectiles = col.GetComponents<Projectile>();
+            if (projectiles != null || isInWater == false)
+            {
+                _projectile.DeleteBait();
+                Debug.Log("hit boat");
+                Destroy(this.gameObject);
+            }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D col)
     {
-        if (other.CompareTag("Water"))
+        isInWater = false;
+    }
+
+    private void FixedUpdate()
+    {
+        if (createLine == true)
         {
             MakeRodline();
-            if (Input.GetMouseButton(0)) GetComponent<Rigidbody2D>().AddForce(Vector2.down * 0.05f, ForceMode2D.Impulse);
-            if(Input.GetMouseButtonDown(1))
-            {
-                Destroy(this.gameObject);
-                _projectile.IsFishing = false;
-            }
+
         }
     }
 
@@ -48,5 +67,10 @@ public class Bait : MonoBehaviour
         _line.positionCount = rodPoints.Length;
         _line.SetPosition(0, begin.position);
         _line.SetPosition(1, end.position);
+    }
+
+    public bool GetIsInWater()
+    {
+        return isInWater;
     }
 }
