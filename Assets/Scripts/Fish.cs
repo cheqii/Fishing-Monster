@@ -4,6 +4,8 @@ public class Fish : MonoBehaviour
 {
     [SerializeField] private FishData _fishData;
     [SerializeField] private float fishMoveSpeed;
+    public float fishExtraSpeed = 1;
+
 
     public enum FishDirection
     {
@@ -16,7 +18,7 @@ public class Fish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fishMoveSpeed = _fishData.FishMoveSpeed + Random.Range(0, _fishData.FishMoveSpeed);
+        fishMoveSpeed = _fishData.FishMoveSpeed + Random.Range(0, _fishData.FishMoveSpeed) ;
     }
 
     // Update is called once per frame
@@ -24,11 +26,11 @@ public class Fish : MonoBehaviour
     {
         if (_Direction == FishDirection.left)
         {
-            this.transform.position += Vector3.left * (Time.deltaTime * fishMoveSpeed);
+            this.transform.position += Vector3.left * (Time.deltaTime * fishMoveSpeed *  fishExtraSpeed);
         }
         else
         {
-            this.transform.position += Vector3.right * (Time.deltaTime * fishMoveSpeed);
+            this.transform.position += Vector3.right * (Time.deltaTime * fishMoveSpeed * fishExtraSpeed);
 
         }
     }

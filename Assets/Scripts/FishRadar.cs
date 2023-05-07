@@ -34,12 +34,22 @@ public class FishRadar : MonoBehaviour
                     {
                         EatBait(bait);
                     }
+                    else
+                    {
+                        //double speed when not eat
+                        _fish.fishExtraSpeed = 4;
+                    }
                     break;
                 
                 case BaitTypes.Shrimp:
                     if (randomNum < _fishData.shrip)
                     {
                         EatBait(bait);
+                    }
+                    else
+                    {
+                        //double speed when not eat
+                        _fish.fishExtraSpeed = 4;
                     }
                     break;
                 
@@ -48,6 +58,11 @@ public class FishRadar : MonoBehaviour
                     {
                         EatBait(bait);
                     }
+                    else
+                    {
+                        //double speed when not eat
+                        _fish.fishExtraSpeed = 4;
+                    }   
                     break;
             }
            

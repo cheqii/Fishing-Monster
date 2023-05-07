@@ -59,13 +59,13 @@ public class Bait : MonoBehaviour
 
         if (col.CompareTag("Boat"))
         {
-            Rod[] projectiles = col.GetComponents<Rod>();
+            var projectiles = col.GetComponent<Rod>();
             if (projectiles != null || isInWater == false)
             {
-                realBaitGameObject.GetComponent<RealBait>().enabled = false;
+                if(realBaitGameObject != null) realBaitGameObject.GetComponent<RealBait>().enabled = false;
+
                 
                 _rod.DeleteBait();
-                Debug.Log("hit boat");
                 
                 Destroy(realBaitGameObject);
                 Destroy(this.gameObject);

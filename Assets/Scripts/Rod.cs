@@ -54,8 +54,9 @@ public class Rod : MonoBehaviour
                 IsFishing = true;
 
 
-                StartCoroutine(delayCollider());
             }
+            StartCoroutine(delayCollider());
+
         }
 
        
