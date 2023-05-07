@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bait : MonoBehaviour
@@ -52,9 +50,6 @@ public class Bait : MonoBehaviour
             
             //_projectile.GetComponent<BoxCollider2D>().enabled = true;
         }
-
-       
-
 
         if (col.CompareTag("Boat"))
         {

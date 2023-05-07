@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Tools
 {
@@ -25,6 +22,7 @@ public class SwitchTool : MonoBehaviour
     private void Start()
     {
         text.text = toolTypes.ToString();
+        text.GetComponentInParent<Image>().color = Color.red;
     }
 
     public void Switch()
@@ -33,17 +31,20 @@ public class SwitchTool : MonoBehaviour
         {
             toolTypes = Tools.Bomb;
             text.text = "Bomb";
+            text.GetComponentInParent<Image>().color = Color.yellow;
         }
             
         else if (toolTypes == Tools.Bomb)
         {
             toolTypes = Tools.Hand;
             text.text = "Hand";
+            text.GetComponentInParent<Image>().color = Color.white;
         }
         else
         {
             toolTypes = Tools.Rod;
             text.text = "Rod";
+            text.GetComponentInParent<Image>().color = Color.red;
         }
     }
 }
