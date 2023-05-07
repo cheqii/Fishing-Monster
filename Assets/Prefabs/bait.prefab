@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rodPoints:
-  - {fileID: 154081139279868117, guid: 53aefd13362b43145b06ad0da4a7537b, type: 3}
+  - {fileID: 0}
   - {fileID: 7842425446443308047}
 --- !u!120 &6273453966797464153
 LineRenderer:

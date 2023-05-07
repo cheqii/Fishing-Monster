@@ -33,8 +33,9 @@ public class Projectile : MonoBehaviour
                 
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
                 Rigidbody2D baitFishing = Instantiate(gameObjRb, throwingPoint.position, Quaternion.identity);
-                
                 baitFishing.velocity = projectileVelocity;
+
+                baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
                 isFishing = true;
             }
         }
