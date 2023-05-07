@@ -12,6 +12,7 @@ public class FishRadar : MonoBehaviour
     private FishData _fishData;
     private GameObject _bait;
     private bool isEating = false;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -85,7 +86,7 @@ public class FishRadar : MonoBehaviour
 
         bait.GetComponent<ShakyObject>().enabled = true;
         
-        StartCoroutine(EatBait(fish.transform, bait.transform));
+        StartCoroutine(EatBait(fish.transform, bait.transform, _fish));
         
         
         //blood
@@ -110,14 +111,14 @@ public class FishRadar : MonoBehaviour
     }
 
 
-    IEnumerator EatBait(Transform t1, Transform t2)
+    IEnumerator EatBait(Transform t1, Transform t2, Fish _fish)
     {
         
         while (true)
         {
-            if (isEating == true && t2 == null)
+            if (isEating == true && t2 == null && isDead == false)
             {
-                Destroy(_fish.gameObject);
+                StartCoroutine(fishDissolve(_fish));
             }
 
             if (t1 != null && t2 != null)
@@ -130,5 +131,29 @@ public class FishRadar : MonoBehaviour
 
         }
 
+    }
+
+
+    IEnumerator fishDissolve(Fish _fish)
+    {            
+        float transition = 0;
+        isDead = true;
+        while (true)
+        {
+            transition += Time.deltaTime;
+            _fish.newMat.SetFloat("_Transition", transition);
+            yield return new WaitForSeconds(Time.deltaTime);
+
+            if (transition > 1)
+            {
+                var blood = _fish.GetComponentInChildren<ParticleSystem>();
+                blood.transform.SetParent(null);
+                blood.loop = false;
+                GameManager.Instance.DestroyGO(blood.gameObject, 10);
+                
+                Destroy(_fish.gameObject);
+            }
+        }
+     
     }
 }

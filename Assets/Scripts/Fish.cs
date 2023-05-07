@@ -4,6 +4,12 @@ public class Fish : MonoBehaviour
 {
     [SerializeField] private FishData _fishData;
     [SerializeField] private float fishMoveSpeed;
+
+    [SerializeField] private Texture2D fishTexture;
+    [SerializeField] public Material fishmesh;
+
+    public Material newMat;
+
     public float fishExtraSpeed = 1;
 
 
@@ -19,6 +25,19 @@ public class Fish : MonoBehaviour
     void Start()
     {
         fishMoveSpeed = _fishData.FishMoveSpeed + Random.Range(0, _fishData.FishMoveSpeed) ;
+
+        
+        var fishMesh = new Material(fishmesh);
+        newMat = fishMesh;
+        fishMesh.SetTexture("_Texture" ,fishTexture);
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
+            {
+                transform.GetChild(i).GetComponent<SpriteRenderer>().material = fishMesh;
+
+            }
+        }
     }
 
     // Update is called once per frame

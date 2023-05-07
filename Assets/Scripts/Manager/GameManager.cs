@@ -23,5 +23,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void DestroyGO(GameObject go, float delay)
+    {
+        Destroy(go, delay);
+    }
 }

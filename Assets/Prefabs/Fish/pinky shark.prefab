@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 95f58b3f6fa7f9c4cab6be22f26e2915, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,6 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fishData: {fileID: 11400000, guid: 7e920b12f2b3c7341801be71f267238d, type: 2}
   fishMoveSpeed: 0
+  fishTexture: {fileID: -8328923581568760697, guid: a6e4f18c7a53c7541926c07cc89c9c50, type: 3}
+  fishmesh: {fileID: 2100000, guid: 95f58b3f6fa7f9c4cab6be22f26e2915, type: 2}
+  fishExtraSpeed: 1
   _Direction: 0
 --- !u!1 &7217151697981387031
 GameObject:
@@ -216,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833eaf2adb5616a42b3182d7cd96cb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fish: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &8155057881368664600
 GameObject:
@@ -269,7 +273,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 95f58b3f6fa7f9c4cab6be22f26e2915, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
