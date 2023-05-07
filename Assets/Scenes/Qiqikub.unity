@@ -1767,6 +1767,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5776021835045416329, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+      propertyPath: m_TagString
+      value: Boat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
 --- !u!4 &530733033 stripped
@@ -2767,6 +2771,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949857004}
   m_CullTransparentMesh: 1
+--- !u!1 &1036425539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5776021835045416329, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+  m_PrefabInstance: {fileID: 530733032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1036425542
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036425539}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.27223206, y: -0.2094078}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.9839134, y: 2.1726837}
+  m_EdgeRadius: 0
 --- !u!1 &1050820454
 GameObject:
   m_ObjectHideFlags: 0
