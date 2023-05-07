@@ -1394,10 +1394,9 @@ MonoBehaviour:
   progressBar: {fileID: 1371874231}
   electricBar: {fileID: 916969230}
   _particle: {fileID: 1499706011}
-  electricBarRecoveryRate: 0.54
+  electricBarRecoveryRate: 1.05
   electricResistance: 0
   electricRecoveryDelay: 1
-  elctricDelayTimer: 5
 --- !u!1 &1201396814
 GameObject:
   m_ObjectHideFlags: 0

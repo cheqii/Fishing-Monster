@@ -18,16 +18,18 @@ public class FishingBar : MonoBehaviour
     [Range(-1,1)]
     [SerializeField] private float electricResistance;
 
+    [Range(0,5)]
     [SerializeField] private float electricRecoveryDelay = 1f;
-    [SerializeField] float elctricDelayTimer = 5f;
+    [SerializeField] private float elctricDelayTimer ;
 
-    private bool elctricCanRecov = true;
+    [SerializeField] private bool elctricCanRecov = true;
 
         
         
     // Start is called before the first frame update
     void Start()
     {
+        elctricDelayTimer = electricRecoveryDelay;
         progressBar.value = 0.4f;
     }
 
@@ -43,6 +45,8 @@ public class FishingBar : MonoBehaviour
             {
                 electricBar.value -= 1;
                 progressBar.value += progressBar.maxValue / 100 * electricResistance;
+                elctricDelayTimer = electricRecoveryDelay;
+
                 _particle.Play();
 
             }
