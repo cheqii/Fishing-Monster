@@ -6021,6 +6021,14 @@ PrefabInstance:
       propertyPath: baitData
       value: 
       objectReference: {fileID: 11400000, guid: 1059e95745b35474f9342b3b17bd78e7, type: 2}
+    - target: {fileID: 4030243535416457911, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+      propertyPath: bombPoint
+      value: 
+      objectReference: {fileID: 1662109895489090857, guid: 448e7d34bb8b1554781a979a832b9266, type: 3}
+    - target: {fileID: 4030243535416457911, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+      propertyPath: fishingBaitPoint
+      value: 
+      objectReference: {fileID: 4366506221460313176, guid: 7683bf2247873494f8baab603ca2b73c, type: 3}
     - target: {fileID: 5776021834907930116, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
       propertyPath: m_Name
       value: Boat (1)
