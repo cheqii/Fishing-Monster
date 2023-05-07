@@ -1392,10 +1392,12 @@ MonoBehaviour:
   _fishCatch: {fileID: 1538232376}
   progressSpeed: 20
   progressBar: {fileID: 1371874231}
-  elctricBar: {fileID: 916969230}
+  electricBar: {fileID: 916969230}
   _particle: {fileID: 1499706011}
-  elctricBarRecoveryRate: 1
-  elctricResistance: 0
+  electricBarRecoveryRate: 0.54
+  electricResistance: 0
+  electricRecoveryDelay: 1
+  elctricDelayTimer: 5
 --- !u!1 &1201396814
 GameObject:
   m_ObjectHideFlags: 0
