@@ -16,6 +16,8 @@ public class Bait : MonoBehaviour
     [SerializeField] private GameObject realBaitGameObject;
 
     private bool isRealBaitYet = false;
+
+    [SerializeField] private BaitData baitData;
     private void Awake()
     {
         _line = GetComponent<LineRenderer>();
