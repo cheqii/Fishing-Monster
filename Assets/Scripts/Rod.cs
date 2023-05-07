@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Projectile : MonoBehaviour
+public class Rod : MonoBehaviour
 {
     [SerializeField] private Transform throwingPoint;
     [SerializeField] private Rigidbody2D gameObjRb;
@@ -10,6 +10,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] private bool isFishing = false;
 
     private Rigidbody2D[] baitGameObjects = new Rigidbody2D[2];
+    
+    [SerializeField] private BaitData baitData;
+
 
     public bool IsFishing
     {
@@ -44,6 +47,7 @@ public class Projectile : MonoBehaviour
             {
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
                 Rigidbody2D baitFishing = Instantiate(gameObjRb, throwingPoint.position, Quaternion.identity);
+                baitFishing.GetComponent<Bait>().SetBait(this.baitData);
                 baitFishing.velocity = projectileVelocity;
                 baitGameObjects[0] = baitFishing;
                 baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;

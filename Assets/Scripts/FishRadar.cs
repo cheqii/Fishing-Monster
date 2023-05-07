@@ -2,21 +2,66 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FishRadar : MonoBehaviour
 {
 
+    [SerializeField] private Fish _fish;
     [SerializeField] private Vector3 offset;
+    private FishData _fishData;
+    
+
+    private void Start()
+    {
+
+        _fish = this.transform.parent.gameObject.GetComponent<Fish>();
+        _fishData = _fish.GetFishData();
+    }
+
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         var bait = col.gameObject.GetComponent<RealBait>();
-        if (bait != null)
+        if (bait != null && bait.isEaten == false)
         {
-            bait.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            GameObject fish = this.gameObject.transform.parent.gameObject;
-            fish.GetComponent<Fish>().enabled = false;
-            StartCoroutine(EatBait(fish.transform, bait.transform));
+            int randomNum = Random.Range(1, 100);
+
+            switch (bait.GetBait())
+            {
+                case BaitTypes.Worm:
+                    if (randomNum < _fishData.worm)
+                    {
+                        EatBait(bait);
+                    }
+                    break;
+                
+                case BaitTypes.Shrimp:
+                    if (randomNum < _fishData.shrip)
+                    {
+                        EatBait(bait);
+                    }
+                    break;
+                
+                case BaitTypes.Octopus:
+                    if (randomNum < _fishData.octopus)
+                    {
+                        EatBait(bait);
+                    }
+                    break;
+            }
+           
+           
         }
+    }
+
+    void EatBait(RealBait bait)
+    {
+        bait.isEaten = true;
+        bait.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        GameObject fish = this.gameObject.transform.parent.gameObject;
+        fish.GetComponent<Fish>().enabled = false;
+        StartCoroutine(EatBait(fish.transform, bait.transform));
     }
     
 

@@ -4,7 +4,7 @@ public class Fish : MonoBehaviour
 {
     [SerializeField] private FishData _fishData;
     [SerializeField] private float fishMoveSpeed;
-    
+
     public enum FishDirection
     {
         left,
@@ -31,5 +31,10 @@ public class Fish : MonoBehaviour
             this.transform.position += Vector3.right * (Time.deltaTime * fishMoveSpeed);
 
         }
+    }
+
+    public FishData GetFishData()
+    {
+        return _fishData;
     }
 }

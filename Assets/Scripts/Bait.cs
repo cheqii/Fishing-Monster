@@ -8,7 +8,7 @@ public class Bait : MonoBehaviour
     [Header("Line Renderer")]
     private LineRenderer _line;
     public Transform[] rodPoints;
-    private Projectile _projectile;
+    private Rod _rod;
     private bool createLine = false;
     [SerializeField] private bool isInWater;
 
@@ -25,7 +25,7 @@ public class Bait : MonoBehaviour
 
     private void Start()
     {
-        _projectile = FindObjectOfType<Projectile>().GetComponent<Projectile>();
+        _rod = FindObjectOfType<Rod>().GetComponent<Rod>();
 
     }
 
@@ -43,6 +43,7 @@ public class Bait : MonoBehaviour
             if (isRealBaitYet == false)
             {
                 var _realBait = Instantiate(RealBait, transform.position, Quaternion.identity);
+                _realBait.GetComponent<RealBait>().SetBait(this.baitData);
                 realBaitGameObject = _realBait;
                 _realBait.GetComponent<RealBait>().buoyancy = this.transform;
                 _realBait.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
@@ -58,12 +59,12 @@ public class Bait : MonoBehaviour
 
         if (col.CompareTag("Boat"))
         {
-            Projectile[] projectiles = col.GetComponents<Projectile>();
+            Rod[] projectiles = col.GetComponents<Rod>();
             if (projectiles != null || isInWater == false)
             {
                 realBaitGameObject.GetComponent<RealBait>().enabled = false;
                 
-                _projectile.DeleteBait();
+                _rod.DeleteBait();
                 Debug.Log("hit boat");
                 
                 Destroy(realBaitGameObject);
@@ -120,5 +121,10 @@ public class Bait : MonoBehaviour
             _lineRenderer.SetPosition(1,_lineRenderer.transform.position );
             yield return new WaitForSeconds(Time.deltaTime);
         }
+    }
+
+    public void SetBait(BaitData _data)
+    {
+        this.baitData = _data;
     }
 }

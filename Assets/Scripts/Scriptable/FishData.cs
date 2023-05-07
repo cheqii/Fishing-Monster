@@ -31,4 +31,16 @@ public class FishData : ScriptableObject
     
     [Range(0.1f, 20.0f)]
     public float ProgressRate_ui = 0.2f;
+
+    [Header("Food liking")] [Range(1, 100)] 
+    public int worm,shrip,octopus;
+   
+
+    
+    
+        
+    public Sprite image;
+
+    
+
 }

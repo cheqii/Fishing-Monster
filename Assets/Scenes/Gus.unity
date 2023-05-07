@@ -5960,6 +5960,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 113478152}
+    - target: {fileID: 4030243535416457911, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+      propertyPath: baitData
+      value: 
+      objectReference: {fileID: 11400000, guid: 60b982e263515504586002193b99513d, type: 2}
     - target: {fileID: 5776021834907930116, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
       propertyPath: m_Name
       value: Boat (1)
@@ -6031,6 +6035,10 @@ PrefabInstance:
     - target: {fileID: 5776021834907930121, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776021835045416329, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+      propertyPath: m_Name
+      value: Rod
       objectReference: {fileID: 0}
     - target: {fileID: 5776021835045416329, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
       propertyPath: m_TagString
@@ -11647,7 +11655,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.057654634}
+  m_Offset: {x: -0.012880921, y: 0.05765462}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11658,7 +11666,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.1153092}
+  m_Size: {x: 2.5892546, y: 1.1153092}
   m_EdgeRadius: 0
 --- !u!1 &1319705960
 GameObject:
