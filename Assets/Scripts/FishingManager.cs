@@ -42,6 +42,12 @@ public class FishingManager : MonoBehaviour
         StartCoroutine(FishBehevior());
 
     }
+    
+    void OnEnable()
+    {
+        StartCoroutine(FishMove());
+        StartCoroutine(FishBehevior());
+    }
 
     // Update is called once per frame
     void Update()

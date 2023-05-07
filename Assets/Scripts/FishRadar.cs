@@ -90,7 +90,7 @@ public class FishRadar : MonoBehaviour
         
         //blood
         var blood = Instantiate(GameManager.Instance.blood, _fish.transform);
-        //blood.GetComponent<ObjectFollow>().target = _fish.transform;
+        blood.transform.localScale = _fish.transform.localScale * 2;
     }
 
     private void Update()
