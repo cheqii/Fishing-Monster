@@ -9,7 +9,7 @@ public class CoinBomb : MonoBehaviour
     private int amountCoin = 0;
     private void Start()
     {
-        pfx = GetComponentInParent<ParticleSystem>();
+        pfx = GetComponentInChildren<ParticleSystem>();
     }
 
     public void DropCoins(int value)

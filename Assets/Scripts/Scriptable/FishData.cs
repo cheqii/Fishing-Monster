@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Serialization;
 
 
 [CreateAssetMenu(fileName = "FishData", menuName = "ScriptableObjects/FishData", order = 1)]
@@ -35,6 +35,10 @@ public class FishData : ScriptableObject
 
     [Header("Food liking")] [Range(1, 100)] 
     public int worm,shrip,octopus;
+
+    [FormerlySerializedAs("minCOinDrop")] [Header("Coin Drop Rate")] 
+    public int minCoinDrop = 1;
+    public int maxCoinDrop = 50;
    
 
     
