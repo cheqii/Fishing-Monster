@@ -8697,7 +8697,8 @@ MonoBehaviour:
   explosion: {fileID: 1043738560573277528, guid: d76d932a8eab9f14683aefadbe252112, type: 3}
   flash: {fileID: 6598167896850880403, guid: e21cb92a20aa7a44aa253ca9dc6a558a, type: 3}
   coinBurst: {fileID: 1144063656622121236, guid: bf32ed7b21cd9b347a970bd4ebd51fec, type: 3}
-  boat: {fileID: 1643835814}
+  cannobFlash: {fileID: 1043738560573277528, guid: 15c6c0edb6fc8a14e8a13285663e9663, type: 3}
+  boat: {fileID: 5776021834564782252}
 --- !u!114 &763000816
 MonoBehaviour:
   m_ObjectHideFlags: 0
