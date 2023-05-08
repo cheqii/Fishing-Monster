@@ -45,6 +45,13 @@ public class FishingBar : MonoBehaviour
             
             //fish dead
             var flash = Instantiate(GameManager.Instance.flash,GameManager.Instance.currentFish.getCenter(), Quaternion.identity);
+            flash.transform.localScale = new Vector3(
+
+                GameManager.Instance.currentFish.transform.localScale.x * flash.transform.localScale.x,
+                GameManager.Instance.currentFish.transform.localScale.y * flash.transform.localScale.y,
+                GameManager.Instance.currentFish.transform.localScale.z * flash.transform.localScale.z
+            );
+            
             GameManager.Instance.DestroyGO(flash,10);
             
             GameManager.Instance.currentFish.GetComponent<Animator>().enabled = false;
