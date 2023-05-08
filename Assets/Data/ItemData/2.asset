@@ -17,4 +17,4 @@ MonoBehaviour:
   itemId: 1
   price: 500
   baitData: {fileID: 11400000, guid: 60b982e263515504586002193b99513d, type: 2}
-  isLocked: 1
+  isLocked: 0

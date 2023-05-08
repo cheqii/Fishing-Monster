@@ -45,6 +45,7 @@ public class ShopSystem : MonoBehaviour
             if (!itemData[i].isLocked)
             {
                 items[i].transform.Find("Lock Icon").gameObject.SetActive(false);
+                items[i].GetComponentInChildren<TextMeshProUGUI>().enabled = false;
             }
             else
             {
@@ -61,7 +62,6 @@ public class ShopSystem : MonoBehaviour
             coinSystem.DecreaseMoney(itemData[id].price);
             itemData[id].isLocked = false;
             items[id].GetComponentInChildren<TextMeshProUGUI>().enabled = false;
-            items[id].transform.Find("Button").GetComponent<Image>().color = Color.grey;
         }
         else
         {
