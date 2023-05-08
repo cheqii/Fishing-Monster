@@ -14,15 +14,9 @@ public class Fish : MonoBehaviour
 
     public float fishExtraSpeed = 1;
 
-    private CoinBomb coinBomb;
-    
     public bool isDead = false;
 
     public bool isHitBoat = false;
-
-    
-    // [SerializeField] private int minCoinDrop = 1;
-    // [SerializeField] private int maxCoinDrop = 10;
 
     public enum FishDirection
     {
@@ -35,10 +29,6 @@ public class Fish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-        coinBomb = GetComponent<CoinBomb>();
-        
         fishMoveSpeed = _fishData.FishMoveSpeed + Random.Range(0, _fishData.FishMoveSpeed) ;
 
         

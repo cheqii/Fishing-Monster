@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Explosion : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Explosion : MonoBehaviour
         if(explosion == false) return;
         
         var _fish = col.gameObject;
-        if (_fish.CompareTag("Fish") == true)
+        if (_fish.CompareTag("Fish") && _fish.GetComponent<Fish>()._fishData._FishType == FishData.FishType.Predator)
         {
 
 
@@ -44,7 +45,6 @@ public class Explosion : MonoBehaviour
         var explosionParticle = Instantiate(  GameManager.Instance.explosion,this.transform.position, Quaternion.identity);
         GameManager.Instance.DestroyGO(explosionParticle,10f);
 
-      
         GameManager.Instance.DestroyGO(transform.parent.gameObject,0.1f);
     }
 }

@@ -14,15 +14,18 @@ public class CoinBomb : MonoBehaviour
 
     public void DropCoins(int value)
     {
+        Debug.Log("Drop Coins");
         int amountToSpawn = Mathf.Min(value, resourceCount - amountCoin);
         if (amountToSpawn > 0)
         {
+            Debug.Log("1");
             pfx.Emit(value);
             amountCoin += amountToSpawn;
         }
 
         if (amountCoin >= resourceCount)
         {
+            Debug.Log("2");
             Destroy(gameObject);
         }
     }

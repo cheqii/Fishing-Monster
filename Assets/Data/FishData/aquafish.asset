@@ -22,4 +22,6 @@ MonoBehaviour:
   worm: 1
   shrip: 1
   octopus: 100
+  minCoinDrop: 5
+  maxCoinDrop: 10
   image: {fileID: 0}

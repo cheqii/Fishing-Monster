@@ -28,7 +28,6 @@ public class BoatHp : MonoBehaviour
     {
         if(takedamage)
         {
-            Debug.Log("Lerp");
             StartCoroutine(LerpHp());
         }
     }
@@ -55,7 +54,6 @@ public class BoatHp : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log(col.name);
         var fish = col.gameObject.GetComponent<Fish>();
         if(fish == null) return;
         if (fish._fishData._FishType == FishData.FishType.Predator)

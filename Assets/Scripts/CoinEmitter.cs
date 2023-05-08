@@ -1,6 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinEmitter : MonoBehaviour
@@ -24,6 +24,7 @@ public class CoinEmitter : MonoBehaviour
         {
             GameObject spawnObj = Instantiate(coinCollect);
             spawnObj.transform.position = transform.TransformPoint(p.position);
+            Debug.Log("Spawn Coin");
         }
     }
 }
