@@ -12,7 +12,7 @@ public class Bomb : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         
-        if (col.CompareTag("Radar") == true)
+        if (col.CompareTag("Fish") == true)
         {
             Debug.Log(col.name);
 

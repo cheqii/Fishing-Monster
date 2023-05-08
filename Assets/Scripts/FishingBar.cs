@@ -41,6 +41,7 @@ public class FishingBar : MonoBehaviour
             progressBar.value = 0.4f;
             Debug.Log("already catch fish");
             GameManager.Instance.fishIsEating = false;
+            GameManager.Instance.currentFish.isDead = true;
         }
         
         if (progressBar.value == 0)

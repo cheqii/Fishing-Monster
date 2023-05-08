@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ public class BoatHp : MonoBehaviour
     private GameObject boat;
     bool takedamage = false;
     int valueToLerp = 0;
+    
+    private float fishBiteDelay = 5;
     
     void Start()
     {
@@ -48,4 +51,24 @@ public class BoatHp : MonoBehaviour
             Destroy(boat);
         }
     }
+    
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        Debug.Log(col.name);
+        var fish = col.gameObject.GetComponent<Fish>();
+        if(fish == null) return;
+        if (fish._fishData._FishType == FishData.FishType.Predator)
+        {
+            fishBiteDelay -= Time.deltaTime;
+
+            if (fishBiteDelay < 0)
+            {
+                DecreaseHp(5);
+                fishBiteDelay = 5;
+            }
+        
+        }
+        
+    }
+
 }
