@@ -145,7 +145,11 @@ public class FishRadar : MonoBehaviour
             if (GameManager.Instance.fishIsEating == false && _fish.isDead == false )
             {
                 _fish.GetComponent<Fish>().enabled = true;
-                bait.baitSprite.sprite = null;
+                if (bait != null)
+                {
+                    bait.baitSprite.sprite = null;
+
+                }
                 break;
             }
 

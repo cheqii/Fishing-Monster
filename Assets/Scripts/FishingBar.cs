@@ -11,6 +11,8 @@ public class FishingBar : MonoBehaviour
     [SerializeField] private Slider progressBar;
     [SerializeField] private Slider electricBar;
     [SerializeField] private ParticleSystem _particle;
+    [SerializeField] private ParticleSystem flashParticle;
+
     
     [Range(0,5)]
     [SerializeField] private float electricBarRecoveryRate;
@@ -77,6 +79,7 @@ public class FishingBar : MonoBehaviour
                 elctricDelayTimer = electricRecoveryDelay;
 
                 _particle.Play();
+                flashParticle.Play();
 
             }
         }
