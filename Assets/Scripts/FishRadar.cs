@@ -15,9 +15,6 @@ public class FishRadar : MonoBehaviour
     private bool isEating = false;
     private bool isDissolve = false;
 
-    [SerializeField] private int minCoinDrop = 1;
-    [SerializeField] private int maxCoinDrop = 10;
-
 
     [SerializeField] private Vector3 biteOffset;
     private CoinBomb coinBomb;
@@ -201,8 +198,8 @@ public class FishRadar : MonoBehaviour
                 // After fish have destroy the coin particle system will exploded
                 Debug.Log("fish hooked");
                 
-                int coinCollect = Random.Range(minCoinDrop, maxCoinDrop);
-                //coinBomb.DropCoins(coinCollect);
+                int coinCollect = Random.Range(_fishData.minCoinDrop, _fishData.maxCoinDrop);
+                coinBomb.DropCoins(coinCollect);
             }
         }
      
