@@ -52,7 +52,7 @@ public class FishRadar : MonoBehaviour
         
         //normal
         var bait = col.gameObject.GetComponent<RealBait>();
-        if (bait != null && bait.isEaten == false)
+        if (bait != null && bait.isEaten == false && bait.Cancel == false)
         {
             int randomNum = Random.Range(1, 100);
 
