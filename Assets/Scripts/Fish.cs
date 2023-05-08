@@ -101,6 +101,7 @@ public class Fish : MonoBehaviour
         if (col.CompareTag("Boat"))
         {
             isHitBoat = true;
+            FindObjectOfType<FisherManAnime>().Idle(1);
         }
     }
 }

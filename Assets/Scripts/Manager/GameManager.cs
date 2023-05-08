@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject blood;
     public GameObject explosion;
     public GameObject flash;
+    public GameObject cannobFlash;
 
     [Header("Boat")]
     [SerializeField] private GameObject boat;
