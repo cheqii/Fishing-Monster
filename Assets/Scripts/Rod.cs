@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 public class Rod : MonoBehaviour
 {
-    [SerializeField] private Transform throwingPoint;
+    public Transform throwingPoint;
     
     [Header("Fishing point")]
     [SerializeField] private Rigidbody2D fishingBaitPoint;
@@ -27,8 +27,6 @@ public class Rod : MonoBehaviour
     {
         if (GameManager.Instance.fishIsEating == true) { return;}
         
-        if(!isFishing) ClickBait();
-        
         if (Input.GetMouseButtonDown(1) && baitGameObjects[0] != null && baitGameObjects[0].GetComponent<Bait>().GetIsInWater() == true)
         {
             Vector2 projectileVelocity = CalculateProjectile(baitGameObjects[0].transform.position, transform.position, 1f);
@@ -40,14 +38,14 @@ public class Rod : MonoBehaviour
     
     public void ClickBait()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
 
             if (hit.collider != null)
             {
+                
+                
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
                 if (SwitchTool.Instance.ToolTypes == Tools.Rod)
                 {
@@ -55,24 +53,27 @@ public class Rod : MonoBehaviour
                     baitFishing.GetComponent<Bait>().SetBait(this.baitData);
                     baitFishing.velocity = projectileVelocity;
                     baitGameObjects[0] = baitFishing;
-                    baitFishing.GetComponent<Bait>().rodPoints[0] = this.transform;
+                    baitFishing.GetComponent<Bait>().rodPoints[0] = throwingPoint;
                     IsFishing = true;
                     
                     StartCoroutine(DelayCollider());
                 }
                 else if (SwitchTool.Instance.ToolTypes == Tools.Bomb)
                 {
+                    FindObjectOfType<FisherManAnime>().Cannon(1);
                     Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
                     bomb.velocity = projectileVelocity;
                 }
 
-            }
+            
         }
         
 
        
         
     }
+
+    
 
 
     IEnumerator DelayCollider()

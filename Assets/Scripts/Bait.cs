@@ -36,6 +36,8 @@ public class Bait : MonoBehaviour
             Debug.Log("Bait triggered water");
             GetComponent<TrailRenderer>().enabled = false;
             createLine = true;
+            
+            FindObjectOfType<FisherManAnime>().Idle(1);
 
             if (isRealBaitYet == false)
             {
@@ -82,7 +84,7 @@ public class Bait : MonoBehaviour
         isInWater = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (createLine)
         {

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject explosion;
     public GameObject flash;
     public GameObject coinBurst;
+    public GameObject cannobFlash;
 
     [Header("Boat")]
     [SerializeField] private GameObject boat;

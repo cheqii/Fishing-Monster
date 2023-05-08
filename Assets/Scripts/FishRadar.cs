@@ -113,6 +113,7 @@ public class FishRadar : MonoBehaviour
         StartCoroutine(EatBait(fish.transform, bait.transform, _fish));
         
         
+        
         //blood
         var blood = Instantiate(GameManager.Instance.blood, _fish.getCenter(),Quaternion.identity);
         blood.transform.SetParent(_fish.transform);

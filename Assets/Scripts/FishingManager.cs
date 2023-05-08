@@ -81,6 +81,8 @@ public class FishingManager : MonoBehaviour
         {
             reverseCatch = false;
         }
+
+        
       
     }
 
