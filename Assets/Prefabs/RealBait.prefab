@@ -436,6 +436,7 @@ MonoBehaviour:
   buoyancy: {fileID: 0}
   Cancel: 0
   isEaten: 0
+  baitSprite: {fileID: 2075136350834987516}
 --- !u!114 &477205092074251261
 MonoBehaviour:
   m_ObjectHideFlags: 0

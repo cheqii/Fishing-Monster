@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Worm
   m_EditorClassIdentifier: 
   baitType: 2
-  baitSprite: {fileID: 0}
+  baitSprite: {fileID: 21300000, guid: d63785a2c096e69439d0224ec7f2039f, type: 3}
