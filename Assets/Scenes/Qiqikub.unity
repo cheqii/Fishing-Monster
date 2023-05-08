@@ -8834,7 +8834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishIsEating: 0
   blood: {fileID: 7899304856270463718, guid: eb7e28fc389a5b443b454c3a0edb02b3, type: 3}
-  explosion: {fileID: 8272354333506005853, guid: 448e7d34bb8b1554781a979a832b9266, type: 3}
+  explosion: {fileID: 1043738560573277528, guid: d76d932a8eab9f14683aefadbe252112, type: 3}
 --- !u!114 &763000816
 MonoBehaviour:
   m_ObjectHideFlags: 0
