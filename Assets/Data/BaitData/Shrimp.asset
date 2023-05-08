@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Shrimp
   m_EditorClassIdentifier: 
   baitType: 2
-  baitSprite: {fileID: 0}
+  baitSprite: {fileID: 21300000, guid: b89a7645984c6304d964a51babfeffe8, type: 3}

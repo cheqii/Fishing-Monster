@@ -10,9 +10,13 @@ public class RealBait : MonoBehaviour
     public Transform buoyancy;
     public bool Cancel= false;
     public bool isEaten = false;
+
+    public SpriteRenderer baitSprite;
     // Start is called before the first frame update
     void Start()
     {
+        baitSprite.sprite = baitData.baitSprite;
+        
         _baitTypes = baitData.baitType;
     }
 
@@ -21,6 +25,7 @@ public class RealBait : MonoBehaviour
     {
         if (Cancel == true)
         {
+
             transform.position = Vector3.Lerp(transform.position, buoyancy.position, Time.deltaTime*10);
         }
     }

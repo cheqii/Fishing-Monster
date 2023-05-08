@@ -14,6 +14,7 @@ public class FishRadar : MonoBehaviour
     private GameObject _bait;
     private bool isEating = false;
     private bool isDissolve = false;
+    private RealBait bait;
 
 
     [SerializeField] private Vector3 biteOffset;
@@ -47,7 +48,7 @@ public class FishRadar : MonoBehaviour
         
         
         //normal
-        var bait = col.gameObject.GetComponent<RealBait>();
+        bait = col.gameObject.GetComponent<RealBait>();
         if (bait != null && bait.isEaten == false && bait.Cancel == false)
         {
             int randomNum = Random.Range(1, 100);
@@ -144,6 +145,7 @@ public class FishRadar : MonoBehaviour
             if (GameManager.Instance.fishIsEating == false && _fish.isDead == false )
             {
                 _fish.GetComponent<Fish>().enabled = true;
+                bait.baitSprite.sprite = null;
                 break;
             }
 
