@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &11718481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,8 +232,8 @@ MonoBehaviour:
   maxVerticalSpawn: -7.5
   _direction: 0
   fishPrefab:
-  - {fileID: 4508650559591382250, guid: 0cabfb30c19695447ab45af4335dc9a9, type: 3}
-  - {fileID: 4508650559591382250, guid: 0cabfb30c19695447ab45af4335dc9a9, type: 3}
+  - {fileID: 2386335112420891410, guid: 4b86de57848036a4690934e8bd36feb3, type: 3}
+  - {fileID: 4455004610003139074, guid: 26731e15fd7b0504a953e270659016fd, type: 3}
   - {fileID: 4508650559591382250, guid: 0cabfb30c19695447ab45af4335dc9a9, type: 3}
   fishSpawnPercent:
   - 40
@@ -912,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &190273245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17004,7 +17004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1686936458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23791,7 +23791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2112238584
 RectTransform:
   m_ObjectHideFlags: 0

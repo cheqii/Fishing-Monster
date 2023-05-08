@@ -60,7 +60,7 @@ public class ShopSystem : MonoBehaviour
             Debug.Log("Purchased Item id : " + itemData[id].itemId);
             coinSystem.DecreaseMoney(itemData[id].price);
             itemData[id].isLocked = false;
-            
+            items[id].GetComponentInChildren<TextMeshProUGUI>().enabled = false;
             items[id].transform.Find("Button").GetComponent<Image>().color = Color.grey;
         }
         else
