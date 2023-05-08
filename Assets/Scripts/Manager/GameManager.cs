@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class GameManager : MonoBehaviour
     [Header("Boat")]
     [SerializeField] private GameObject boat;
 
+    [Header("UI Panel")] 
+    [SerializeField] private GameObject gameOverPanel;
+
     public GameObject Boat
     {
         get => boat;
@@ -38,6 +42,16 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Update()
+    {
+        CheckGameEnd();
+    }
+
+    void CheckGameEnd()
+    {
+        if(boat == null) gameOverPanel.SetActive(true);
     }
 
     public void DestroyGO(GameObject go, float delay)
