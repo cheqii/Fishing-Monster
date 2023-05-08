@@ -66,6 +66,7 @@ MonoBehaviour:
   offset: {x: 2, y: -2.67, z: 0}
   minCoinDrop: 1
   maxCoinDrop: 10
+  biteOffset: {x: -3.56, y: 4.5, z: 0}
 --- !u!50 &5064798499454324339
 Rigidbody2D:
   serializedVersion: 4
@@ -227,6 +228,8 @@ MonoBehaviour:
   fishmesh: {fileID: 2100000, guid: 95f58b3f6fa7f9c4cab6be22f26e2915, type: 2}
   newMat: {fileID: 0}
   fishExtraSpeed: 1
+  isDead: 0
+  isHitBoat: 0
   _Direction: 0
 --- !u!95 &30521695716514024
 Animator:

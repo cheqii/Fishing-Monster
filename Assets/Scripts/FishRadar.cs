@@ -18,6 +18,8 @@ public class FishRadar : MonoBehaviour
     [SerializeField] private int minCoinDrop = 1;
     [SerializeField] private int maxCoinDrop = 10;
 
+
+    [SerializeField] private Vector3 biteOffset;
     private CoinBomb coinBomb;
 
     private void Start()
@@ -41,10 +43,8 @@ public class FishRadar : MonoBehaviour
             
             //set cecnter
 
-            var gap = _fish.getCenter() - _fish.transform.position - new Vector3(2,1,0);
-            
             transform.parent.transform.position =
-                Vector3.Lerp(transform.parent.transform.position , col.transform.position - gap, Time.deltaTime * 0.2f);
+                Vector3.Lerp(transform.parent.transform.position , col.transform.position - biteOffset, Time.deltaTime * 0.5f);
             
             
             
