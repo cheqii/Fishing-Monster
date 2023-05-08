@@ -46,8 +46,8 @@ public class Explosion : MonoBehaviour
         explosion = true;
         var _blood = Instantiate(  GameManager.Instance.explosion,this.transform.position, Quaternion.identity);
         GameManager.Instance.DestroyGO(_blood,10f);
-
-      
+        
+        
         GameManager.Instance.DestroyGO(transform.parent.gameObject,0.1f);
     }
 }

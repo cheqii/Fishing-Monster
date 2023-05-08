@@ -8834,6 +8834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishIsEating: 0
   blood: {fileID: 7899304856270463718, guid: eb7e28fc389a5b443b454c3a0edb02b3, type: 3}
+  explosion: {fileID: 8272354333506005853, guid: 448e7d34bb8b1554781a979a832b9266, type: 3}
 --- !u!114 &763000816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8846,7 +8847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d2e8d85435fae4ea07298a84e078e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolTypes: 0
+  toolTypes: 1
 --- !u!114 &763000817
 MonoBehaviour:
   m_ObjectHideFlags: 0
