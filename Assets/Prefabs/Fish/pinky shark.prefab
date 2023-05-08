@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2386335112420891410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3995, y: -12.159, z: 0}
+  m_LocalPosition: {x: 0, y: -12.159, z: 0}
   m_LocalScale: {x: 1.0680715, y: 1.0680715, z: 1.0680715}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083acd09f4869864ea3759adad25fc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ResourceCount>k__BackingField: 0
-  <ResourceNode>k__BackingField: {fileID: 2386335112420891410}
+  resourceCount: 0
+  resourceNode: {fileID: 0}
 --- !u!1 &7217151697981387031
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,9 +185,10 @@ GameObject:
   - component: {fileID: 1416861333755061551}
   - component: {fileID: 6246730276268775856}
   - component: {fileID: 7043725170039637807}
+  - component: {fileID: 4183565781003265081}
   m_Layer: 0
   m_Name: Radar
-  m_TagString: Untagged
+  m_TagString: Radar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,10 +236,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833eaf2adb5616a42b3182d7cd96cb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <minCoinDrop>k__BackingField: 1
-  <maxCoinDrop>k__BackingField: 10
   _fish: {fileID: 0}
   offset: {x: 2, y: -2.67, z: 0}
+  minCoinDrop: 1
+  maxCoinDrop: 10
+--- !u!50 &4183565781003265081
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217151697981387031}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8155057881368664600
 GameObject:
   m_ObjectHideFlags: 0

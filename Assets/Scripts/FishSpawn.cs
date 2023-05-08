@@ -52,7 +52,6 @@ public class FishSpawn : MonoBehaviour
                     Vector3 spawnPos = new Vector3(transform.position.x, randomVerticalPos, transform.position.z);
                     
                     
-                    Debug.Log($"random num : {randomNum} | fish : {i}");
                     var fish = Instantiate(fishPrefab[i],spawnPos, Quaternion.identity);
 
                     if (_direction == Fish.FishDirection.left)

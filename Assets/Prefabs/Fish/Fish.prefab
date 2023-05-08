@@ -281,9 +281,10 @@ GameObject:
   - component: {fileID: 3903803156079717138}
   - component: {fileID: 6506725619226612610}
   - component: {fileID: 9044661119908460986}
+  - component: {fileID: 5919431800107540796}
   m_Layer: 0
   m_Name: Radar
-  m_TagString: Untagged
+  m_TagString: Radar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,3 +334,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fish: {fileID: 0}
   offset: {x: 0, y: -0.5, z: 0}
+  minCoinDrop: 1
+  maxCoinDrop: 10
+--- !u!50 &5919431800107540796
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217801765047103934}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
