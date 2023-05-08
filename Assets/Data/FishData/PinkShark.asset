@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PinkShark
   m_EditorClassIdentifier: 
   FishName: PinkShark
+  _FishType: 0
   FishMoveSpeed: 3.52
   fishMoveDelay_ui: 0.2
   fishMoveSpeed_ui: {x: 0, y: 100}
@@ -21,4 +22,6 @@ MonoBehaviour:
   worm: 0
   shrip: 0
   octopus: 100
+  minCoinDrop: 5
+  maxCoinDrop: 20
   image: {fileID: 0}
