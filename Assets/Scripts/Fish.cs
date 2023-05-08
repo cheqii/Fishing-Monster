@@ -75,4 +75,18 @@ public class Fish : MonoBehaviour
         // coinBomb.DropCoins(coinCollect);
         // Debug.Log("Coin Drop Bombbbbb");
     }
+
+    public Vector3 getCenter()
+    {
+        Vector3 sumVector = new Vector3(0f,0f,0f);
+
+        foreach (Transform child in this.gameObject.transform)
+        {          
+            sumVector += child.position;        
+        }
+
+        Vector3 groupCenter = sumVector / this.gameObject.transform.childCount;
+
+        return groupCenter;
+    }
 }

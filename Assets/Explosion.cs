@@ -35,7 +35,13 @@ public class Explosion : MonoBehaviour
         if (_fishRadar != null)
         {
             var _fish = col.gameObject.transform.parent;
-            var _blood = Instantiate(GameManager.Instance.blood, _fish.gameObject.transform.position, Quaternion.identity);
+
+            
+
+            
+            var _blood = Instantiate(GameManager.Instance.blood,
+                _fish.GetComponent<Fish>().getCenter(),
+                Quaternion.identity);
             Destroy(_fish.gameObject);
             _blood.GetComponent<ParticleSystem>().loop = false;
             GameManager.Instance.DestroyGO(_blood,10);
