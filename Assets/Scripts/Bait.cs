@@ -84,15 +84,15 @@ public class Bait : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (createLine == true)
+        if (createLine)
         {
             MakeRodline();
-
         }
     }
 
     private void MakeRodline()
     {
+        if (BoatDisappear()) return;
         Transform begin = rodPoints[0];
         Transform end = rodPoints[1];
         _line.positionCount = rodPoints.Length;
@@ -119,5 +119,15 @@ public class Bait : MonoBehaviour
     public void SetBait(BaitData _data)
     {
         this.baitData = _data;
+    }
+    
+    private bool BoatDisappear()
+    {
+        if (rodPoints[0] != null) return false;
+        
+        _rod.DeleteBait();
+        Destroy(realBaitGameObject);
+        Destroy(this.gameObject);
+        return true;
     }
 }
