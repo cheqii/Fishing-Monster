@@ -9,10 +9,13 @@ public class ShopSystem : MonoBehaviour
     [SerializeField] private GameObject[] items;
     [SerializeField] private ItemData[] itemData;
 
+    [SerializeField] private Color32 normalColor;
+    [SerializeField] private Color32 selectedColor;
     private void Start()
     {
         coinSystem = CoinSystem.Instance;
         SetupShop();
+        
     }
 
     private void Update()
@@ -24,7 +27,6 @@ public class ShopSystem : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-
             if (!itemData[i].isLocked)
             {
                 items[i].transform.Find("Lock Icon").gameObject.SetActive(false);
@@ -35,6 +37,7 @@ public class ShopSystem : MonoBehaviour
             }
             items[i].transform.Find("Image").GetComponentInChildren<Image>().sprite = itemData[i].itemImage;
             items[i].GetComponentInChildren<TextMeshProUGUI>().text = "$ " + itemData[i].price;
+            
         }
     }
 
@@ -42,6 +45,7 @@ public class ShopSystem : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
+            // check if item is locked
             if (!itemData[i].isLocked)
             {
                 items[i].transform.Find("Lock Icon").gameObject.SetActive(false);
@@ -67,7 +71,6 @@ public class ShopSystem : MonoBehaviour
         {
             if(coinSystem.CurrentMoney < itemData[id].price) Debug.Log("Not enough money");
             else Debug.Log("Item already purchased");
-            
         }
     }
     
@@ -79,5 +82,9 @@ public class ShopSystem : MonoBehaviour
         Debug.Log(rod.BaitData);
     }
 
-    
+    public void ColorButton(int id)
+    {
+        Debug.Log("Color button clicked");
+        items[id].transform.Find("Image").GetComponent<Image>().color =Color.grey;
+    }
 }
