@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -47,5 +48,21 @@ public class BoatHp : MonoBehaviour
             fillImage.enabled = false;
             Destroy(boat);
         }
+    }
+    
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        Debug.Log(col.name);
+        var fish = col.gameObject.GetComponent<Fish>();
+        if(fish == null) return;
+        if (fish._fishData._FishType == FishData.FishType.Predator)
+        {
+            DecreaseHp(5);
+            StartCoroutine(Wait(1));
+        }    }
+
+    IEnumerator Wait(float sec)
+    {
+        yield return new WaitForSeconds(sec);
     }
 }

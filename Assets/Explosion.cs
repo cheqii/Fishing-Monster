@@ -31,14 +31,11 @@ public class Explosion : MonoBehaviour
     {
         if(explosion == false) return;
         
-        var _fishRadar = col.GetComponent<FishRadar>();
-        if (_fishRadar != null)
+        var _fish = col.gameObject;
+        if (_fish.CompareTag("Fish") == true)
         {
-            var _fish = col.gameObject.transform.parent;
 
-            
 
-            
             var _blood = Instantiate(GameManager.Instance.blood,
                 _fish.GetComponent<Fish>().getCenter(),
                 Quaternion.identity);
@@ -51,8 +48,8 @@ public class Explosion : MonoBehaviour
     public void ExplosionReady()
     {
         explosion = true;
-        var _blood = Instantiate(  GameManager.Instance.explosion,this.transform.position, Quaternion.identity);
-        GameManager.Instance.DestroyGO(_blood,10f);
+        var explosionParticle = Instantiate(  GameManager.Instance.explosion,this.transform.position, Quaternion.identity);
+        GameManager.Instance.DestroyGO(explosionParticle,10f);
 
       
         GameManager.Instance.DestroyGO(transform.parent.gameObject,0.1f);

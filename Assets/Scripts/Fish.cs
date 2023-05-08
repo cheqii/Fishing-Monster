@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Fish : MonoBehaviour
 {
-    [SerializeField] private FishData _fishData;
+    [SerializeField] public FishData _fishData;
     [SerializeField] private float fishMoveSpeed;
 
     [SerializeField] private Texture2D fishTexture;
@@ -13,7 +15,12 @@ public class Fish : MonoBehaviour
     public float fishExtraSpeed = 1;
 
     private CoinBomb coinBomb;
+    
+    public bool isDead = false;
 
+    public bool isHitBoat = false;
+
+    
     // [SerializeField] private int minCoinDrop = 1;
     // [SerializeField] private int maxCoinDrop = 10;
 
@@ -28,6 +35,8 @@ public class Fish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        
         coinBomb = GetComponent<CoinBomb>();
         
         fishMoveSpeed = _fishData.FishMoveSpeed + Random.Range(0, _fishData.FishMoveSpeed) ;
@@ -36,6 +45,7 @@ public class Fish : MonoBehaviour
         var fishMesh = new Material(fishmesh);
         newMat = fishMesh;
         fishMesh.SetTexture("_Texture" ,fishTexture);
+        
         for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).GetComponent<SpriteRenderer>() != null)
@@ -81,12 +91,24 @@ public class Fish : MonoBehaviour
         Vector3 sumVector = new Vector3(0f,0f,0f);
 
         foreach (Transform child in this.gameObject.transform)
-        {          
-            sumVector += child.position;        
+        {
+            if (child.name != "Radar")
+            {
+                sumVector += child.position;    
+            }
+               
         }
 
         Vector3 groupCenter = sumVector / this.gameObject.transform.childCount;
 
         return groupCenter;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Boat"))
+        {
+            isHitBoat = true;
+        }
     }
 }

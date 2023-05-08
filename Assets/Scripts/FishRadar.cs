@@ -13,8 +13,8 @@ public class FishRadar : MonoBehaviour
     private FishData _fishData;
     private GameObject _bait;
     private bool isEating = false;
-    private bool isDead = false;
-    
+    private bool isDissolve = false;
+
     [SerializeField] private int minCoinDrop = 1;
     [SerializeField] private int maxCoinDrop = 10;
 
@@ -28,8 +28,32 @@ public class FishRadar : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
+        if (_fishData._FishType == null) return;
+        
+        //predator
+        if(_fishData._FishType == FishData.FishType.Predator)
+        {
+            if (col.name != "Rod") return;
+            
+            transform.parent.GetComponent<Fish>().enabled = false;
+            
+            //set cecnter
+
+            var gap = _fish.getCenter() - _fish.transform.position - new Vector3(2,1,0);
+            
+            transform.parent.transform.position =
+                Vector3.Lerp(transform.parent.transform.position , col.transform.position - gap, Time.deltaTime * 0.2f);
+            
+            
+            
+            
+            return;
+        }
+        
+        
+        //normal
         var bait = col.gameObject.GetComponent<RealBait>();
         if (bait != null && bait.isEaten == false)
         {
@@ -113,27 +137,31 @@ public class FishRadar : MonoBehaviour
     public static void LerpTransform (Transform t1, Transform t2, float t)
     {
         t1.position =   Vector3.Lerp(t1.position, t2.position, t);
-        //t1.rotation =   Quaternion.Lerp (t1.rotation, t2.rotation, t);
-        //t1.localScale =   Vector3.Lerp(t1.localScale, t2.localScale , t);
     }
 
 
     IEnumerator EatBait(Transform t1, Transform t2, Fish _fish)
     {
+        GameManager.Instance.currentFish = transform.parent.GetComponent<Fish>();
+        
         
         while (true)
         {
-            if (GameManager.Instance.fishIsEating == false)
+            if (GameManager.Instance.fishIsEating == false && _fish.isDead == false )
             {
                 _fish.GetComponent<Fish>().enabled = true;
                 break;
-
             }
-            
-            
-            if (isEating == true && t2 == null && isDead == false)
+
+
+            if (isEating == true && t2 == null && _fish.isDead == true && isDissolve == false)
             {
-                StartCoroutine(fishDissolve(_fish));
+                LerpTransform(_fish.transform,FindObjectOfType<Rod>().transform,Time.deltaTime);
+                
+                if (_fish.isHitBoat == true)
+                {
+                    StartCoroutine(fishDissolve(_fish));
+                }
             }
 
             if (t1 != null && t2 != null)
@@ -152,10 +180,12 @@ public class FishRadar : MonoBehaviour
     IEnumerator fishDissolve(Fish _fish)
     {            
         float transition = 0;
-        isDead = true;
+        isDissolve = true;
+
         while (true)
         {
-            transition += Time.deltaTime;
+            
+            transition += Time.deltaTime * 2;
             _fish.newMat.SetFloat("_Transition", transition);
             yield return new WaitForSeconds(Time.deltaTime);
 
@@ -170,7 +200,7 @@ public class FishRadar : MonoBehaviour
                 Debug.Log("fish hooked");
                 
                 int coinCollect = Random.Range(minCoinDrop, maxCoinDrop);
-                coinBomb.DropCoins(coinCollect);
+                //coinBomb.DropCoins(coinCollect);
             }
         }
      

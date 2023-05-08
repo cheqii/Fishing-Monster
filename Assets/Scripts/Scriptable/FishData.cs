@@ -14,6 +14,7 @@ public class FishData : ScriptableObject
     }
 
     [Header("Name")] public string FishName;
+    public FishType _FishType;
     
     [Header("Fish Movement Data")]
     [Range(0.1f, 5.0f)]

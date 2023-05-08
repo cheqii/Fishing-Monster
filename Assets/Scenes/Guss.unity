@@ -233,7 +233,7 @@ MonoBehaviour:
   _direction: 0
   fishPrefab:
   - {fileID: 4455004610003139074, guid: 26731e15fd7b0504a953e270659016fd, type: 3}
-  - {fileID: 4455004610003139074, guid: 26731e15fd7b0504a953e270659016fd, type: 3}
+  - {fileID: 4508650559591382250, guid: 0cabfb30c19695447ab45af4335dc9a9, type: 3}
   - {fileID: 2386335112420891410, guid: 4b86de57848036a4690934e8bd36feb3, type: 3}
   fishSpawnPercent:
   - 40
@@ -1767,6 +1767,10 @@ PrefabInstance:
       objectReference: {fileID: 4366506221460313176, guid: 7683bf2247873494f8baab603ca2b73c, type: 3}
     - target: {fileID: 5776021834907930116, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
       propertyPath: m_Name
+      value: Boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776021834907930116, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+      propertyPath: m_TagString
       value: Boat
       objectReference: {fileID: 0}
     - target: {fileID: 5776021834907930119, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
@@ -8585,6 +8589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishIsEating: 0
+  currentFish: {fileID: 0}
   blood: {fileID: 7899304856270463718, guid: eb7e28fc389a5b443b454c3a0edb02b3, type: 3}
   explosion: {fileID: 1043738560573277528, guid: d76d932a8eab9f14683aefadbe252112, type: 3}
 --- !u!114 &763000816
@@ -9728,6 +9733,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc9a7aae2da186d41b3a950ccd887ab8, type: 3}
+--- !u!1 &1151527104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5776021834907930116, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+  m_PrefabInstance: {fileID: 347342504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1151527109
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151527104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.089813665, y: 0.43783468}
+  m_Size: {x: 5.9845977, y: 1.8756881}
+  m_Direction: 1
 --- !u!1 &1158740110
 GameObject:
   m_ObjectHideFlags: 0
