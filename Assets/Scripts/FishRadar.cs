@@ -164,7 +164,10 @@ public class FishRadar : MonoBehaviour
             if (t1 != null && t2 != null)
             {
                 var start = t1.transform.localPosition;
-                var target = t2.transform.localPosition + offset;
+
+                Vector3 gap = (_fish.getCenter() - t1.position) - new Vector3(t1.localScale.x,0,0);
+                
+                var target = t2.transform.localPosition - gap + offset;
                 t1.transform.localPosition =  Vector3.Lerp(start, target,1);
             }
             yield return new WaitForSeconds(Time.deltaTime);

@@ -1543,9 +1543,9 @@ MonoBehaviour:
   - {fileID: 4455004610003139074, guid: 26731e15fd7b0504a953e270659016fd, type: 3}
   - {fileID: 2386335112420891410, guid: 4b86de57848036a4690934e8bd36feb3, type: 3}
   fishSpawnPercent:
-  - 40
-  - 50
-  - 10
+  - 0
+  - 0
+  - 100
   fishSpawnRate: {x: 1, y: 4}
 --- !u!4 &266548632
 Transform:
