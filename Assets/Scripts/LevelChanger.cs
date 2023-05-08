@@ -19,7 +19,7 @@ public class LevelChanger : MonoBehaviour
     
     public void Forward()
     {
-        if (currentLevel < level.Length+1)
+        if (currentLevel < level.Length)
         {
             ChangeLevelTo(currentLevel + 1);
         }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class FishingManager : MonoBehaviour
@@ -14,6 +15,10 @@ public class FishingManager : MonoBehaviour
     [SerializeField] private float fishMoveDelay = 0.2f;
     [SerializeField] private Vector2 fishMoveSpeed = new Vector2(0,100);
     [SerializeField] private float fishPhaseDelay = 15f;
+
+    [SerializeField] private Image catchImage;
+    [SerializeField] private Sprite[] _sprites;
+
     
     
     private Vector3 fishDestination;
@@ -57,10 +62,13 @@ public class FishingManager : MonoBehaviour
         
         if (reverseCatch == true)
         {
+            catchImage.sprite = _sprites[0];
             catchUi.eulerAngles += new Vector3(0,0,Time.deltaTime * catchMovingSpeed);
         }
         else
         {
+            catchImage.sprite = _sprites[1];
+
             catchUi.eulerAngles -= new Vector3(0,0,Time.deltaTime * catchMovingSpeed);
         }
 

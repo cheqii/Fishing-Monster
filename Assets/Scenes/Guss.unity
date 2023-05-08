@@ -9972,6 +9972,10 @@ MonoBehaviour:
   fishMoveDelay: 0.2
   fishMoveSpeed: {x: 0, y: 200}
   fishPhaseDelay: 15
+  catchImage: {fileID: 1538232373}
+  _sprites:
+  - {fileID: 21300000, guid: e5478d403e266e54e9c5cc72022b76d8, type: 3}
+  - {fileID: 21300000, guid: c43d57f9f3b6fe54098acd21ad4c913a, type: 3}
   catchMovingSpeed: 70
 --- !u!114 &1095570419
 MonoBehaviour:
@@ -18962,6 +18966,8 @@ MonoBehaviour:
   fishMoveDelay: 0.2
   fishMoveSpeed: {x: 0, y: 200}
   fishPhaseDelay: 15
+  catchImage: {fileID: 0}
+  _sprites: []
   catchMovingSpeed: 70
 --- !u!1 &1917668528
 GameObject:
