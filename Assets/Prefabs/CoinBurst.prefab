@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8104019067888020852}
   - component: {fileID: 668421912601034705}
   m_Layer: 0
-  m_Name: CoinBomb
+  m_Name: CoinBurst
   m_TagString: CoinBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -869,7 +869,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2

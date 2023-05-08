@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,7 +5,7 @@ public class Explosion : MonoBehaviour
 {
     [SerializeField] private float bombTimer = 0.1f;
     [SerializeField] private bool explosion = false;
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -26,16 +22,19 @@ public class Explosion : MonoBehaviour
         if(explosion == false) return;
         
         var _fish = col.gameObject;
-        if (_fish.CompareTag("Fish") && _fish.GetComponent<Fish>()._fishData._FishType == FishData.FishType.Predator)
+        if (_fish.CompareTag("Fish"))
         {
-
-
             var _blood = Instantiate(GameManager.Instance.blood,
                 _fish.GetComponent<Fish>().getCenter(),
                 Quaternion.identity);
             Destroy(_fish.gameObject);
             _blood.GetComponent<ParticleSystem>().loop = false;
             GameManager.Instance.DestroyGO(_blood,10);
+            
+            var coin = Instantiate(GameManager.Instance.coinBurst, 
+                _fish.GetComponent<Fish>().getCenter(), Quaternion.identity);
+            GameManager.Instance.DestroyGO(coin,1);
+
         }
     }
 

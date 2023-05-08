@@ -5000,7 +5000,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 5
 --- !u!114 &1481946447361254828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5123,7 +5123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083acd09f4869864ea3759adad25fc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCount: 5
+  resourceCount: 2
   resourceNode: {fileID: 4508650559591382250}
 --- !u!1 &5530278810665094222
 GameObject:

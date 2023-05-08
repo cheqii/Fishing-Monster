@@ -9,7 +9,8 @@ public class CoinEmitter : MonoBehaviour
 
     private ParticleSystem pfx;
 
-    private List<ParticleSystem.Particle> exitPfx = new();
+    private List<ParticleSystem.Particle> exitPfx = new List<ParticleSystem.Particle>();
+    public List<ParticleSystem.Particle> ExitPfx => exitPfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,6 @@ public class CoinEmitter : MonoBehaviour
         {
             GameObject spawnObj = Instantiate(coinCollect);
             spawnObj.transform.position = transform.TransformPoint(p.position);
-            Debug.Log("Spawn Coin");
         }
     }
 }
