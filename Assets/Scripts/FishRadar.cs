@@ -117,7 +117,8 @@ public class FishRadar : MonoBehaviour
         
         
         //blood
-        var blood = Instantiate(GameManager.Instance.blood, _fish.transform);
+        var blood = Instantiate(GameManager.Instance.blood, _fish.getCenter(),Quaternion.identity);
+        blood.transform.SetParent(_fish.transform);
         blood.transform.localScale = _fish.transform.localScale * 2;
     }
     
@@ -181,6 +182,8 @@ public class FishRadar : MonoBehaviour
     {            
         float transition = 0;
         isDissolve = true;
+
+
 
         while (true)
         {

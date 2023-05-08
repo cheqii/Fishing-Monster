@@ -8592,6 +8592,7 @@ MonoBehaviour:
   currentFish: {fileID: 0}
   blood: {fileID: 7899304856270463718, guid: eb7e28fc389a5b443b454c3a0edb02b3, type: 3}
   explosion: {fileID: 1043738560573277528, guid: d76d932a8eab9f14683aefadbe252112, type: 3}
+  flash: {fileID: 6598167896850880403, guid: e21cb92a20aa7a44aa253ca9dc6a558a, type: 3}
 --- !u!114 &763000816
 MonoBehaviour:
   m_ObjectHideFlags: 0

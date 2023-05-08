@@ -42,6 +42,12 @@ public class FishingBar : MonoBehaviour
             Debug.Log("already catch fish");
             GameManager.Instance.fishIsEating = false;
             GameManager.Instance.currentFish.isDead = true;
+            
+            //fish dead
+            var flash = Instantiate(GameManager.Instance.flash,GameManager.Instance.currentFish.getCenter(), Quaternion.identity);
+            GameManager.Instance.DestroyGO(flash,10);
+            
+            GameManager.Instance.currentFish.GetComponent<Animator>().enabled = false;
         }
         
         if (progressBar.value == 0)
