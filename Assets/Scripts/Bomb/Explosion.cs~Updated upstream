@@ -30,14 +30,10 @@ public class Explosion : MonoBehaviour
             Destroy(_fish.gameObject);
             _blood.GetComponent<ParticleSystem>().loop = false;
             GameManager.Instance.DestroyGO(_blood,10);
-
-            if (_fish.GetComponent<Fish>()._fishData._FishType == FishData.FishType.Predator)
-            {
-                var coin = Instantiate(GameManager.Instance.coinBurst, 
-                    _fish.GetComponent<Fish>().getCenter(), Quaternion.identity);
-                GameManager.Instance.DestroyGO(coin,1);
-            }
-          
+            
+            var coin = Instantiate(GameManager.Instance.coinBurst, 
+                _fish.GetComponent<Fish>().getCenter(), Quaternion.identity);
+            GameManager.Instance.DestroyGO(coin,1);
 
         }
     }

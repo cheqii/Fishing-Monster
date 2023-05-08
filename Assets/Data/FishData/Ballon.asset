@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938069603a1a2b24caf7a169bb948cb7, type: 3}
+  m_Name: Ballon
+  m_EditorClassIdentifier: 
+  FishName: Balloon
+  _FishType: 0
+  FishMoveSpeed: 1.98
+  fishMoveDelay_ui: 0.2
+  fishMoveSpeed_ui: {x: 0, y: 100}
+  fishPhaseDelay_ui: 15
+  ProgressRate_ui: 0.2
+  worm: 0
+  shrip: 0
+  octopus: 100
+  minCoinDrop: 5
+  maxCoinDrop: 20
+  image: {fileID: 0}
