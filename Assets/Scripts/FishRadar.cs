@@ -52,7 +52,7 @@ public class FishRadar : MonoBehaviour
         
         //normal
         var bait = col.gameObject.GetComponent<RealBait>();
-        if (bait != null && bait.isEaten == false)
+        if (bait != null && bait.isEaten == false && bait.Cancel == false)
         {
             int randomNum = Random.Range(1, 100);
 
@@ -117,7 +117,8 @@ public class FishRadar : MonoBehaviour
         
         
         //blood
-        var blood = Instantiate(GameManager.Instance.blood, _fish.transform);
+        var blood = Instantiate(GameManager.Instance.blood, _fish.getCenter(),Quaternion.identity);
+        blood.transform.SetParent(_fish.transform);
         blood.transform.localScale = _fish.transform.localScale * 2;
     }
     
@@ -164,7 +165,10 @@ public class FishRadar : MonoBehaviour
             if (t1 != null && t2 != null)
             {
                 var start = t1.transform.localPosition;
-                var target = t2.transform.localPosition + offset;
+
+                Vector3 gap = (_fish.getCenter() - t1.position) - new Vector3(t1.localScale.x,0,0);
+                
+                var target = t2.transform.localPosition - gap + offset;
                 t1.transform.localPosition =  Vector3.Lerp(start, target,1);
             }
             yield return new WaitForSeconds(Time.deltaTime);
@@ -178,6 +182,8 @@ public class FishRadar : MonoBehaviour
     {            
         float transition = 0;
         isDissolve = true;
+
+
 
         while (true)
         {

@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6635138925761726667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.364783, y: -1.7212, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.14263, y: 0.14263, z: 0.14263}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,10 @@ MonoBehaviour:
   rodPoints:
   - {fileID: 0}
   - {fileID: 7842425446443308047}
+  isInWater: 0
   RealBait: {fileID: 6635138925761726667, guid: 34acfd2190f947c46a71112ad9689010, type: 3}
+  realBaitGameObject: {fileID: 0}
+  baitData: {fileID: 0}
 --- !u!120 &6273453966797464153
 LineRenderer:
   m_ObjectHideFlags: 0
