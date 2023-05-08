@@ -53,6 +53,11 @@ public class Rod : MonoBehaviour
             
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
 
+            if(hit.collider.gameObject.layer == 5)
+            {
+                return;
+            }
+            
             if (hit.collider != null)
             {
                 

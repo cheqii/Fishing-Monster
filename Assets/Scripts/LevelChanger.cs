@@ -6,7 +6,7 @@ public class LevelChanger : MonoBehaviour
 {
     [SerializeField] private GameObject[] level;
     [SerializeField] private Animator transition;
-    private int currentLevel = 1;
+    [SerializeField] private int currentLevel = 1;
 
 
     public void Back()
@@ -19,7 +19,7 @@ public class LevelChanger : MonoBehaviour
     
     public void Forward()
     {
-        if (currentLevel < level.Length+1)
+        if (currentLevel < level.Length)
         {
             ChangeLevelTo(currentLevel + 1);
         }
@@ -41,7 +41,7 @@ public class LevelChanger : MonoBehaviour
         {
             Destroy(i.gameObject);
         }
-        level[lv].SetActive(true);
+        level[lv-1].SetActive(true);
 
         currentLevel = lv;
     }

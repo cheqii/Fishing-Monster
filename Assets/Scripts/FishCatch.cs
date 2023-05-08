@@ -6,7 +6,6 @@ using UnityEngine;
 public class FishCatch : MonoBehaviour
 {
     [SerializeField] private bool isStayOnFish;
-    
  
     
 
