@@ -4874,7 +4874,7 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
 --- !u!1 &8272354333506005853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,7 +4962,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!50 &1662109895489090857
 Rigidbody2D:
