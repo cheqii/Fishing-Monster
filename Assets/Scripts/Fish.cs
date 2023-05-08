@@ -78,17 +78,20 @@ public class Fish : MonoBehaviour
     public Vector3 getCenter()
     {
         Vector3 sumVector = new Vector3(0f,0f,0f);
+        int childCount = 0;
 
         foreach (Transform child in this.gameObject.transform)
         {
             if (child.name != "Radar")
             {
-                sumVector += child.position;    
+                sumVector += child.position;
+                childCount++;
             }
                
         }
 
-        Vector3 groupCenter = sumVector / this.gameObject.transform.childCount;
+        Vector3 groupCenter = sumVector / childCount;
+        childCount = 0;
 
         return groupCenter;
     }
