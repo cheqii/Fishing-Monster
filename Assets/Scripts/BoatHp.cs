@@ -48,6 +48,7 @@ public class BoatHp : MonoBehaviour
         if (slider.value <= 0)
         {
             fillImage.enabled = false;
+            Destroy(slider.gameObject);
             Destroy(gameObject);
         }
     }
@@ -63,7 +64,7 @@ public class BoatHp : MonoBehaviour
 
             if (fishBiteDelay < 0)
             {
-                DecreaseHp(5);
+                DecreaseHp(10);
                 fishBiteDelay = 5;
             }
         

@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.fishIsEating == true)
+        if (GameManager.Instance.fishIsEating == true && GameManager.Instance.Boat != null)
         {
             fishingMiniGame.SetActive(true);
         }

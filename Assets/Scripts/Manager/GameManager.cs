@@ -9,14 +9,19 @@ public class GameManager : MonoBehaviour
 
     public Fish currentFish;
     
-
+    [Header("Particle Object")]
     public GameObject blood;
     public GameObject explosion;
     public GameObject flash;
 
+    [Header("Boat")]
+    [SerializeField] private GameObject boat;
 
-    
-
+    public GameObject Boat
+    {
+        get => boat;
+        set => boat = value;
+    }
 
     private void Awake()
     {

@@ -43,10 +43,6 @@ public class FishRadar : MonoBehaviour
 
             transform.parent.transform.position =
                 Vector3.Lerp(transform.parent.transform.position , col.transform.position - biteOffset, Time.deltaTime * 0.5f);
-            
-            
-            
-            
             return;
         }
         

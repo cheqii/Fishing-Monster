@@ -232,9 +232,9 @@ MonoBehaviour:
   maxVerticalSpawn: -7.5
   _direction: 0
   fishPrefab:
-  - {fileID: 4455004610003139074, guid: 26731e15fd7b0504a953e270659016fd, type: 3}
-  - {fileID: 4455004610003139074, guid: 26731e15fd7b0504a953e270659016fd, type: 3}
-  - {fileID: 2386335112420891410, guid: 4b86de57848036a4690934e8bd36feb3, type: 3}
+  - {fileID: 4508650559591382250, guid: 0cabfb30c19695447ab45af4335dc9a9, type: 3}
+  - {fileID: 4508650559591382250, guid: 0cabfb30c19695447ab45af4335dc9a9, type: 3}
+  - {fileID: 4508650559591382250, guid: 0cabfb30c19695447ab45af4335dc9a9, type: 3}
   fishSpawnPercent:
   - 40
   - 50
@@ -8818,6 +8818,7 @@ MonoBehaviour:
   blood: {fileID: 7899304856270463718, guid: eb7e28fc389a5b443b454c3a0edb02b3, type: 3}
   explosion: {fileID: 1043738560573277528, guid: d76d932a8eab9f14683aefadbe252112, type: 3}
   flash: {fileID: 6598167896850880403, guid: e21cb92a20aa7a44aa253ca9dc6a558a, type: 3}
+  boat: {fileID: 1643835814}
 --- !u!114 &763000816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17451,6 +17452,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
+--- !u!1 &1643835814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5776021834907930116, guid: 2691657457c4865459a6f10b04aaaef3, type: 3}
+  m_PrefabInstance: {fileID: 347342504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1663829716
 GameObject:
   m_ObjectHideFlags: 0
