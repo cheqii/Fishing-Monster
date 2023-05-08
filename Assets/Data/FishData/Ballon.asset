@@ -16,7 +16,7 @@ MonoBehaviour:
   _FishType: 0
   FishMoveSpeed: 1.98
   fishMoveDelay_ui: 0.2
-  fishMoveSpeed_ui: {x: 0, y: 100}
+  fishMoveSpeed_ui: {x: 0, y: 200}
   fishPhaseDelay_ui: 15
   ProgressRate_ui: 0.1
   worm: 13

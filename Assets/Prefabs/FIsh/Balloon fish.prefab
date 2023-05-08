@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceCount: 5
-  resourceNode: {fileID: 2386335112420891410, guid: 4b86de57848036a4690934e8bd36feb3, type: 3}
+  resourceNode: {fileID: 7271273386869557256}
 --- !u!70 &4824597538946453559
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -26728,7 +26728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220883216680438544, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: fishSpawnPercent.Array.data[3]
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8220883216680438546, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: m_IsActive
