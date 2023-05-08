@@ -8,12 +8,23 @@ public class Rod : MonoBehaviour
     
     [Header("Fishing point")]
     [SerializeField] private Rigidbody2D fishingBaitPoint;
+
+    public Rigidbody2D FishingBaitPoint
+    {
+        get => fishingBaitPoint;
+        set => fishingBaitPoint = value;
+    }
     
     [Header("Bomb point")]
     [SerializeField] private Rigidbody2D bombPoint;
 
     [SerializeField] private bool isFishing = false;
     [SerializeField] private BaitData baitData;
+    public BaitData BaitData
+    {
+        get => baitData;
+        set => baitData = value;
+    }
 
     private Rigidbody2D[] baitGameObjects = new Rigidbody2D[2];
 

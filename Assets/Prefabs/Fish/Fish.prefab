@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083acd09f4869864ea3759adad25fc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCount: 5
+  resourceCount: 10
   resourceNode: {fileID: 4455004610003139074}
 --- !u!1 &5230331302140100839
 GameObject:
@@ -891,7 +891,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1038,7 +1038,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.5
+      value: 2
       mode: 0
       spread: 0
       speed:

@@ -16,3 +16,5 @@ MonoBehaviour:
   itemImage: {fileID: 21300002, guid: 5b3d57683d9bd5b41b8e5e66c6beda06, type: 3}
   itemId: 0
   price: 20
+  baitData: {fileID: 0}
+  isLocked: 0
