@@ -16,12 +16,12 @@ MonoBehaviour:
   _FishType: 0
   FishMoveSpeed: 1.76
   fishMoveDelay_ui: 0.2
-  fishMoveSpeed_ui: {x: 0, y: 100}
+  fishMoveSpeed_ui: {x: 0, y: 50}
   fishPhaseDelay_ui: 15
-  ProgressRate_ui: 0.2
-  worm: 1
-  shrip: 1
-  octopus: 100
+  ProgressRate_ui: 0.4
+  worm: 60
+  shrip: 100
+  octopus: 1
   minCoinDrop: 1
   maxCoinDrop: 10
   image: {fileID: 8717877980640967303, guid: a6e4f18c7a53c7541926c07cc89c9c50, type: 3}

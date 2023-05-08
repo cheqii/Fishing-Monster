@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FishName: Bigeyes
   _FishType: 0
-  FishMoveSpeed: 3.52
+  FishMoveSpeed: 4.13
   fishMoveDelay_ui: 0.2
-  fishMoveSpeed_ui: {x: 0, y: 100}
-  fishPhaseDelay_ui: 15
-  ProgressRate_ui: 0.2
-  worm: 0
-  shrip: 0
-  octopus: 100
+  fishMoveSpeed_ui: {x: 0, y: 300}
+  fishPhaseDelay_ui: 10
+  ProgressRate_ui: 0.1
+  worm: 25
+  shrip: 25
+  octopus: 27
   minCoinDrop: 5
-  maxCoinDrop: 20
+  maxCoinDrop: 50
   image: {fileID: 0}

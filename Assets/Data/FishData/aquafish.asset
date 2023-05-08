@@ -23,5 +23,5 @@ MonoBehaviour:
   shrip: 1
   octopus: 100
   minCoinDrop: 5
-  maxCoinDrop: 10
+  maxCoinDrop: 20
   image: {fileID: 0}

@@ -55,6 +55,7 @@ public class FishRadar : MonoBehaviour
 
             switch (bait.GetBait())
             {
+                
                 case BaitTypes.Worm:
                     if (randomNum < _fishData.worm)
                     {
@@ -70,6 +71,7 @@ public class FishRadar : MonoBehaviour
                 case BaitTypes.Shrimp:
                     if (randomNum < _fishData.shrip)
                     {
+
                         EatBait(bait);
                     }
                     else
@@ -82,6 +84,7 @@ public class FishRadar : MonoBehaviour
                 case BaitTypes.Octopus:
                     if (randomNum < _fishData.octopus)
                     {
+
                         EatBait(bait);
                     }
                     else

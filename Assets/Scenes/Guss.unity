@@ -8877,6 +8877,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3a332e78b98db34485c594cae47d473, type: 2}
   - {fileID: 11400000, guid: d1098a7861cb9024f8b16dc8757f0cfd, type: 2}
   - {fileID: 11400000, guid: bd613830c4b06ff498721de3ede00893, type: 2}
+  normalColor:
+    serializedVersion: 2
+    rgba: 0
+  selectedColor:
+    serializedVersion: 2
+    rgba: 0
 --- !u!114 &763000815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8896,7 +8902,9 @@ MonoBehaviour:
   flash: {fileID: 6598167896850880403, guid: e21cb92a20aa7a44aa253ca9dc6a558a, type: 3}
   coinBurst: {fileID: 1144063656622121236, guid: bf32ed7b21cd9b347a970bd4ebd51fec, type: 3}
   cannobFlash: {fileID: 1043738560573277528, guid: 15c6c0edb6fc8a14e8a13285663e9663, type: 3}
+  bomb: {fileID: 8272354333506005853, guid: 448e7d34bb8b1554781a979a832b9266, type: 3}
   boat: {fileID: 5776021834564782252}
+  gameOverPanel: {fileID: 0}
 --- !u!114 &763000816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24610,6 +24618,7 @@ MonoBehaviour:
   slider: {fileID: 113478152}
   fillImage: {fileID: 1922482399}
   _boatCurrentHp: 0
+  boat: {fileID: 5776021834564782252}
 --- !u!114 &4030243535612279839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24814,7 +24823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786658156208426726, guid: edaa318d67ee8b842a5f755221d3a2a1, type: 3}
       propertyPath: fishSpawnPercent.Array.data[0]
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5786658156208426726, guid: edaa318d67ee8b842a5f755221d3a2a1, type: 3}
       propertyPath: fishSpawnPercent.Array.data[1]
