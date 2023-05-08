@@ -197,6 +197,8 @@ public class FishRadar : MonoBehaviour
                 GameManager.Instance.DestroyGO(blood.gameObject, 10);
                 
                 Destroy(_fish.gameObject);
+                
+                // After fish have destroy the coin particle system will exploded
                 Debug.Log("fish hooked");
                 
                 int coinCollect = Random.Range(minCoinDrop, maxCoinDrop);

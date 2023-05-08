@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Tools
 {
@@ -10,36 +11,25 @@ public enum Tools
 public class SwitchTool : Singleton<SwitchTool>
 {
     [SerializeField] private Tools toolTypes = Tools.Rod;
-    [SerializeField] private TextMeshProUGUI text;
 
     public Tools ToolTypes
     {
         get => toolTypes;
         set => toolTypes = value;
     }
-
-    private void Start()
+    
+    public void SwitchToRod()
     {
-        text.text = toolTypes.ToString();
+        toolTypes = Tools.Rod;
     }
 
-    public void Switch()
+    public void SwitchToBomb()
     {
-        if (toolTypes == Tools.Rod)
-        {
-            toolTypes = Tools.Bomb;
-            text.text = "Bomb";
-        }
-            
-        else if (toolTypes == Tools.Bomb)
-        {
-            toolTypes = Tools.Hand;
-            text.text = "Hand";
-        }
-        else
-        {
-            toolTypes = Tools.Rod;
-            text.text = "Rod";
-        }
+        toolTypes = Tools.Bomb;
+    }
+
+    public void SwitchToHand()
+    {
+        toolTypes = Tools.Hand;
     }
 }

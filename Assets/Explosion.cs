@@ -8,13 +8,6 @@ public class Explosion : MonoBehaviour
 {
     [SerializeField] private float bombTimer = 0.1f;
     [SerializeField] private bool explosion = false;
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

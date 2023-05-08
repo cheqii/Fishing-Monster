@@ -59,7 +59,6 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckFish();
         if (_Direction == FishDirection.left)
         {
             this.transform.position += Vector3.left * (Time.deltaTime * fishMoveSpeed *  fishExtraSpeed);
@@ -74,16 +73,6 @@ public class Fish : MonoBehaviour
     public FishData GetFishData()
     {
         return _fishData;
-    }
-
-    void CheckFish()
-    {
-        if (gameObject != null) return;
-
-        // int coinCollect = Random.Range(minCoinDrop, maxCoinDrop);
-        //
-        // coinBomb.DropCoins(coinCollect);
-        // Debug.Log("Coin Drop Bombbbbb");
     }
 
     public Vector3 getCenter()
