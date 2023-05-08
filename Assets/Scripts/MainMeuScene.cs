@@ -10,8 +10,18 @@ public class MainMeuScene : MonoBehaviour
         SceneManager.LoadScene(name);
     }
     
-    public void exit()
+    public void Exit()
     {
         Application.Quit();
+    }
+    
+    public void OpenUI(GameObject ui)
+    {
+        ui.SetActive(true);
+    }
+    
+    public void CloseUI(GameObject ui)
+    {
+        ui.SetActive(false);
     }
 }
