@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,7 +12,7 @@ public class BoatHp : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private Image fillImage;
     [SerializeField] private int _boatCurrentHp;
-    private GameObject boat;
+    public GameObject boat;
     bool takedamage = false;
     int valueToLerp = 0;
     
@@ -46,6 +47,11 @@ public class BoatHp : MonoBehaviour
         _boatCurrentHp -= damage;
         if (slider.value <= 0)
         {
+            var bomb = Instantiate(GameManager.Instance.bomb, boat.transform.position, quaternion.identity);
+            bomb.transform.localScale *= 3;
+            bomb.GetComponentInChildren<Explosion>().ExplosionReady();
+            var blood = Instantiate(GameManager.Instance.blood, boat.transform.position, quaternion.identity);
+            blood.GetComponent<ParticleSystem>().loop = false;
             fillImage.enabled = false;
             Destroy(slider.gameObject);
             Destroy(gameObject);
