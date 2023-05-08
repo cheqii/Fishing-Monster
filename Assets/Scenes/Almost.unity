@@ -8548,7 +8548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 427589731}
-  currentMoney: 0
+  currentMoney: 1000
 --- !u!4 &763000813
 Transform:
   m_ObjectHideFlags: 0
