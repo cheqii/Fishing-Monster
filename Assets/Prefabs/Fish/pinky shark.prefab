@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3591038996323025777}
   - component: {fileID: 2808619972475828897}
   - component: {fileID: 2808619972475828898}
+  - component: {fileID: 7118639956293151821}
   m_Layer: 0
   m_Name: pinky shark
   m_TagString: Untagged
@@ -159,6 +160,20 @@ MonoBehaviour:
   newMat: {fileID: 0}
   fishExtraSpeed: 1
   _Direction: 0
+--- !u!114 &7118639956293151821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2386335112420891410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083acd09f4869864ea3759adad25fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ResourceCount>k__BackingField: 0
+  <ResourceNode>k__BackingField: {fileID: 2386335112420891410}
 --- !u!1 &7217151697981387031
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833eaf2adb5616a42b3182d7cd96cb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <minCoinDrop>k__BackingField: 1
+  <maxCoinDrop>k__BackingField: 10
   _fish: {fileID: 0}
   offset: {x: 2, y: -2.67, z: 0}
 --- !u!1 &8155057881368664600

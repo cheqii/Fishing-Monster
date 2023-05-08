@@ -12,15 +12,11 @@ public class FishCatch : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.name);
         if (col.CompareTag("FishUi"))
         {
             isStayOnFish = true;
         }
-        
-        
-        
-        
+
     }
     private void OnTriggerExit2D(Collider2D col)
     {
