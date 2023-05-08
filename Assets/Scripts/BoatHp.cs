@@ -15,6 +15,8 @@ public class BoatHp : MonoBehaviour
     bool takedamage = false;
     int valueToLerp = 0;
     
+    private float fishBiteDelay = 5;
+    
     void Start()
     {
         boat = GameObject.FindGameObjectWithTag("Boat");
@@ -57,12 +59,16 @@ public class BoatHp : MonoBehaviour
         if(fish == null) return;
         if (fish._fishData._FishType == FishData.FishType.Predator)
         {
-            DecreaseHp(5);
-            StartCoroutine(Wait(1));
-        }    }
+            fishBiteDelay -= Time.deltaTime;
 
-    IEnumerator Wait(float sec)
-    {
-        yield return new WaitForSeconds(sec);
+            if (fishBiteDelay < 0)
+            {
+                DecreaseHp(5);
+                fishBiteDelay = 5;
+            }
+        
+        }
+        
     }
+
 }
