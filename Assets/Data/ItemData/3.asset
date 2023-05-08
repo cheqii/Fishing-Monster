@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Shrimp
   itemImage: {fileID: 21300000, guid: b89a7645984c6304d964a51babfeffe8, type: 3}
   itemId: 2
-  price: 1000
+  price: 1
   baitData: {fileID: 11400000, guid: 854004b623c68b2409dd7cdd1e30cbe6, type: 2}
-  isLocked: 1
+  isLocked: 0

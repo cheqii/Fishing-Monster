@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Octopus Bait
   itemImage: {fileID: 21300000, guid: 9fd7e69940b8d9f4eb9bc282163d078f, type: 3}
   itemId: 3
-  price: 5000
+  price: 1
   baitData: {fileID: 11400000, guid: 1059e95745b35474f9342b3b17bd78e7, type: 2}
-  isLocked: 1
+  isLocked: 0
