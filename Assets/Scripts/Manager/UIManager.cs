@@ -22,4 +22,10 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(sceneName);
     }
+
+    public void RestartGame(string sceneName)
+    {
+        CoinSystem.Instance.DecreaseMoney(CoinSystem.Instance.CurrentMoney / 4);
+        SceneManager.LoadSceneAsync(sceneName);
+    }
 }
