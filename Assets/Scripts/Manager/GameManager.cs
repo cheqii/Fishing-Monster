@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public bool fishIsEating = false;
 
     public GameObject blood;
+    public GameObject explosion;
+
     
 
 

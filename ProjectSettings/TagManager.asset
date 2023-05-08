@@ -8,6 +8,9 @@ TagManager:
   - Fish
   - Water
   - Boat
+  - CoinBomb
+  - SceneFish
+  - Radar
   layers:
   - Default
   - TransparentFX
