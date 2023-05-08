@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,5 +16,10 @@ public class UIManager : MonoBehaviour
         {
             fishingMiniGame.SetActive(false);
         }
+    }
+    
+    public void SelectScene (string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
     }
 }

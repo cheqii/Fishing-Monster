@@ -15,7 +15,6 @@ public class ShopSystem : MonoBehaviour
     {
         coinSystem = CoinSystem.Instance;
         SetupShop();
-        
     }
 
     private void Update()
@@ -82,9 +81,13 @@ public class ShopSystem : MonoBehaviour
         Debug.Log(rod.BaitData);
     }
 
-    public void ColorButton(int id)
+    public void SelectButton(int id)
     {
-        Debug.Log("Color button clicked");
-        items[id].transform.Find("Image").GetComponent<Image>().color =Color.grey;
+        items[id].transform.Find("Image").GetComponent<Image>().color = selectedColor;
     }
+    
+    public void DeSelect(int id)
+    {
+        items[id].transform.Find("Image").GetComponent<Image>().color =normalColor;
+    }   
 }
