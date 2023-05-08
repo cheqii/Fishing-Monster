@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921ad03b47250b4459de3f88b0e96805, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  itemName: Gun
-  itemImage: {fileID: 8717877980640967303, guid: a6e4f18c7a53c7541926c07cc89c9c50, type: 3}
+  itemName: Worm
+  itemImage: {fileID: 21300000, guid: d63785a2c096e69439d0224ec7f2039f, type: 3}
   itemId: 1
   price: 500
+  baitData: {fileID: 11400000, guid: 60b982e263515504586002193b99513d, type: 2}
+  isLocked: 0

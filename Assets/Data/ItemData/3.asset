@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 921ad03b47250b4459de3f88b0e96805, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  itemName: Banana
-  itemImage: {fileID: -1442522280529488725, guid: f7bf2b7bd99fc134fb81d97ce1108838, type: 3}
+  itemName: Shrimp
+  itemImage: {fileID: 21300000, guid: b89a7645984c6304d964a51babfeffe8, type: 3}
   itemId: 2
   price: 1000
+  baitData: {fileID: 11400000, guid: 854004b623c68b2409dd7cdd1e30cbe6, type: 2}
+  isLocked: 0
