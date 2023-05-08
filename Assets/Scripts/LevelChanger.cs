@@ -6,7 +6,7 @@ public class LevelChanger : MonoBehaviour
 {
     [SerializeField] private GameObject[] level;
     [SerializeField] private Animator transition;
-    private int currentLevel = 1;
+    [SerializeField] private int currentLevel = 1;
 
 
     public void Back()
@@ -41,7 +41,7 @@ public class LevelChanger : MonoBehaviour
         {
             Destroy(i.gameObject);
         }
-        level[lv].SetActive(true);
+        level[lv-1].SetActive(true);
 
         currentLevel = lv;
     }
