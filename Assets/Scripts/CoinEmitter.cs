@@ -23,7 +23,7 @@ public class CoinEmitter : MonoBehaviour
         foreach (ParticleSystem.Particle p in exitPfx)
         {
             GameObject spawnObj = Instantiate(coinCollect);
-            spawnObj.transform.position = p.position;
+            spawnObj.transform.position = transform.TransformPoint(p.position);
         }
     }
 }

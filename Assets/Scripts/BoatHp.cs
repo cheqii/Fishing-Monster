@@ -19,7 +19,7 @@ public class BoatHp : MonoBehaviour
     
     void Start()
     {
-        boat = GameObject.FindGameObjectWithTag("Boat");
+        // boat = GameObject.FindGameObjectWithTag("Boat");
         _boatCurrentHp = boatFullHp;
         slider.value = _boatCurrentHp;
     }
@@ -48,7 +48,7 @@ public class BoatHp : MonoBehaviour
         if (slider.value <= 0)
         {
             fillImage.enabled = false;
-            Destroy(boat);
+            Destroy(gameObject);
         }
     }
     
