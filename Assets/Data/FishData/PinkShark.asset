@@ -23,5 +23,6 @@ MonoBehaviour:
   shrip: 72
   octopus: 36
   minCoinDrop: 5
-  maxCoinDrop: 20
+  maxCoinDrop: 10
+  fishPrice: 50
   image: {fileID: 0}

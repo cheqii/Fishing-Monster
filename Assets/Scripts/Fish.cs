@@ -90,6 +90,7 @@ public class Fish : MonoBehaviour
     {
         if (col.CompareTag("Boat"))
         {
+            Debug.Log("Catch Fish and hit boat");
             isHitBoat = true;
             FindObjectOfType<FisherManAnime>().Idle(1);
         }

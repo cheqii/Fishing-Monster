@@ -12,6 +12,13 @@ public class FishData : ScriptableObject
         Normal,
         Predator,
     }
+    
+    public enum FishSize
+    {
+        Small,
+        Medium,
+        Large
+    }
 
     [Header("Name")] public string FishName;
     public FishType _FishType;
@@ -36,14 +43,13 @@ public class FishData : ScriptableObject
     [Header("Food liking")] [Range(1, 100)] 
     public int worm,shrip,octopus;
 
-    [FormerlySerializedAs("minCOinDrop")] [Header("Coin Drop Rate")] 
+    [Header("Coin Drop Rate")] 
     public int minCoinDrop = 1;
     public int maxCoinDrop = 50;
-   
 
-    
-    
-        
+    [Header("Fish Price")] 
+    public int fishPrice;
+
     public Sprite image;
 
     

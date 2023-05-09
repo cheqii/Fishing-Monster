@@ -207,6 +207,9 @@ public class FishRadar : MonoBehaviour
                 
                 Destroy(_fish.gameObject);
                 
+                // get money from fishing a fish
+                CoinSystem.Instance.IncreaseMoney(_fish._fishData.fishPrice);
+                
                 // After fish have destroy the coin particle system will exploded
                 Debug.Log("fish hooked");
                 

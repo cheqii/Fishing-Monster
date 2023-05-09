@@ -24,4 +24,5 @@ MonoBehaviour:
   octopus: 81
   minCoinDrop: 5
   maxCoinDrop: 100
+  fishPrice: 200
   image: {fileID: 0}

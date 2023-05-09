@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FishCatch : MonoBehaviour
@@ -22,10 +19,7 @@ public class FishCatch : MonoBehaviour
     {
         if (col.CompareTag("FishUi"))
         {
-
             FindObjectOfType<FisherManAnime>().Fighting(1);
-
-
         }
     }
 

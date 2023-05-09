@@ -60,8 +60,6 @@ public class Rod : MonoBehaviour
             
             if (hit.collider != null)
             {
-                
-                
                 Vector2 projectileVelocity = CalculateProjectile(throwingPoint.position, hit.point, 1f);
                 if (SwitchTool.Instance.ToolTypes == Tools.Rod)
                 {
@@ -80,13 +78,7 @@ public class Rod : MonoBehaviour
                     Rigidbody2D bomb = Instantiate(bombPoint, throwingPoint.position, Quaternion.identity);
                     bomb.velocity = projectileVelocity;
                 }
-
-            
-        }
-        
-
-       
-        
+            }
     }
 
     
