@@ -16,26 +16,44 @@ public class FishSpawn : MonoBehaviour
     private float[] fishSpawnPercentCal;
 
     [SerializeField] private Vector2 fishSpawnRate;
+
+    private bool alreadySetup = false;
         
     // Start is called before the first frame update
-    void Start()
+
+    void OnEnable()
     {
-        fishSpawnPercentCal = fishSpawnPercent;
-        
-        for (int i = 0; i < fishSpawnPercent.Length; i++)
+
+        if (alreadySetup != true)
         {
-            if (i == 0)
+            fishSpawnPercentCal = fishSpawnPercent;
+            
+            for (int i = 0; i < fishSpawnPercent.Length; i++)
             {
-                fishSpawnPercentCal[i] = fishSpawnPercent[i];
-            }
-            else
-            {
-                fishSpawnPercentCal[i] = fishSpawnPercent[i] + fishSpawnPercentCal[i - 1];
-            }
+                if (i == 0)
+                {
+                    fishSpawnPercentCal[i] = fishSpawnPercent[i];
+                }
+                else
+                {
+                    fishSpawnPercentCal[i] = fishSpawnPercent[i] + fishSpawnPercentCal[i - 1];
+                }
+    
+            }      
+            StartCoroutine(SpawnFish());
+
+            alreadySetup = true;
 
         }
+        else
+        {
+            StartCoroutine(SpawnFish());
 
-        StartCoroutine(SpawnFish());
+        }
+        
+           
+    
+
     }
     
     IEnumerator SpawnFish()

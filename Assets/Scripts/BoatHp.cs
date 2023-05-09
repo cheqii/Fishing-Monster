@@ -47,10 +47,10 @@ public class BoatHp : MonoBehaviour
         _boatCurrentHp -= damage;
         if (slider.value <= 0)
         {
-            var bomb = Instantiate(GameManager.Instance.bomb, boat.transform.position, quaternion.identity);
+            var bomb = Instantiate(GameManager.Instance.bomb, transform.position, quaternion.identity);
             bomb.transform.localScale *= 3;
             bomb.GetComponentInChildren<Explosion>().ExplosionReady();
-            var blood = Instantiate(GameManager.Instance.blood, boat.transform.position, quaternion.identity);
+            var blood = Instantiate(GameManager.Instance.blood,transform.position, quaternion.identity);
             blood.GetComponent<ParticleSystem>().loop = false;
             fillImage.enabled = false;
             Destroy(slider.gameObject);

@@ -21,15 +21,21 @@ public class SwitchTool : Singleton<SwitchTool>
     public void SwitchToRod()
     {
         toolTypes = Tools.Rod;
+        
+        FindObjectOfType<FisherManAnime>().Throw(1);
     }
 
     public void SwitchToBomb()
     {
         toolTypes = Tools.Bomb;
+        FindObjectOfType<FisherManAnime>().Cannon(1);
+
     }
 
     public void SwitchToHand()
     {
         toolTypes = Tools.Hand;
+        FindObjectOfType<FisherManAnime>().Throw(1);
+
     }
 }
