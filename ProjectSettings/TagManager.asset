@@ -11,6 +11,8 @@ TagManager:
   - CoinBomb
   - SceneFish
   - Radar
+  - Bait
+  - Boundary
   layers:
   - Default
   - TransparentFX

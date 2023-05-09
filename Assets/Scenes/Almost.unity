@@ -10219,7 +10219,7 @@ GameObject:
   - component: {fileID: 1066405707}
   m_Layer: 0
   m_Name: Boundary
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26695,7 +26695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786658156506243329, guid: edaa318d67ee8b842a5f755221d3a2a1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edaa318d67ee8b842a5f755221d3a2a1, type: 3}
@@ -27065,7 +27065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220883217486010485, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8220883217602352457, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: m_IsActive

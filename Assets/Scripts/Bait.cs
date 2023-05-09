@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -69,7 +70,6 @@ public class Bait : MonoBehaviour
     }
 
 
-
     public void DeleteBait()
     {
 
@@ -77,14 +77,12 @@ public class Bait : MonoBehaviour
             if (projectiles != null || isInWater == false)
             {
                 if(realBaitGameObject != null) realBaitGameObject.GetComponent<RealBait>().enabled = false;
-
                 
                 _rod.DeleteBait();
                 
                 Destroy(realBaitGameObject);
                 Destroy(this.gameObject);
             }
-        
     }
     
     
@@ -101,6 +99,10 @@ public class Bait : MonoBehaviour
     private void OnTriggerExit2D(Collider2D col)
     {
         isInWater = false;
+
+        if (col.CompareTag("Boundary"))
+            DeleteBait();
+        
     }
 
     private void Update()
