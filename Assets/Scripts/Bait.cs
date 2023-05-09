@@ -67,6 +67,25 @@ public class Bait : MonoBehaviour
             }
         }
     }
+
+
+
+    public void DeleteBait()
+    {
+
+        var projectiles = FindObjectOfType<Rod>();
+            if (projectiles != null || isInWater == false)
+            {
+                if(realBaitGameObject != null) realBaitGameObject.GetComponent<RealBait>().enabled = false;
+
+                
+                _rod.DeleteBait();
+                
+                Destroy(realBaitGameObject);
+                Destroy(this.gameObject);
+            }
+        
+    }
     
     
     
