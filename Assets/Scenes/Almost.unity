@@ -26695,7 +26695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786658156506243329, guid: edaa318d67ee8b842a5f755221d3a2a1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edaa318d67ee8b842a5f755221d3a2a1, type: 3}
@@ -26919,6 +26919,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 515478804}
     m_Modifications:
+    - target: {fileID: 8220883215863086460, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8220883216203751139, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: _direction
       value: 1
@@ -26958,6 +26962,10 @@ PrefabInstance:
     - target: {fileID: 8220883216203751139, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: fishSpawnPercent.Array.data[3]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220883216363949905, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8220883216680438544, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: fishSpawnRate.y
@@ -27054,6 +27062,14 @@ PrefabInstance:
     - target: {fileID: 8220883217486010485, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
       propertyPath: m_Name
       value: Map3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220883217486010485, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220883217602352457, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e64e0b96a3a24fa43969ab4fdb847e92, type: 3}
