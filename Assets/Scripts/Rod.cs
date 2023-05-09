@@ -53,10 +53,13 @@ public class Rod : MonoBehaviour
             
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
 
-            if(hit.collider.gameObject.layer == 5)
+            bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+            if (hit &&  isOverUI == true)
             {
                 return;
             }
+            
+            
             
             if (hit.collider != null)
             {

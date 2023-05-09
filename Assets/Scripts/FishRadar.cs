@@ -51,7 +51,8 @@ public class FishRadar : MonoBehaviour
         bait = col.gameObject.GetComponent<RealBait>();
         if (bait != null && bait.isEaten == false && bait.Cancel == false)
         {
-            int randomNum = Random.Range(1, 100);
+            System.Random rnd = new System.Random();
+            int randomNum = RandomNum(0, 100);
 
             switch (bait.GetBait())
             {
@@ -59,6 +60,7 @@ public class FishRadar : MonoBehaviour
                 case BaitTypes.Worm:
                     if (randomNum < _fishData.worm)
                     {
+                        Debug.Log(randomNum + " | worm " + _fishData.worm);
                         EatBait(bait);
                     }
                     else
@@ -71,6 +73,7 @@ public class FishRadar : MonoBehaviour
                 case BaitTypes.Shrimp:
                     if (randomNum < _fishData.shrip)
                     {
+                        Debug.Log(randomNum + " | Shrimp " + _fishData.shrip);
 
                         EatBait(bait);
                     }
@@ -84,6 +87,7 @@ public class FishRadar : MonoBehaviour
                 case BaitTypes.Octopus:
                     if (randomNum < _fishData.octopus)
                     {
+                        Debug.Log(randomNum + " | Octopus " + _fishData.octopus);
 
                         EatBait(bait);
                     }
@@ -215,5 +219,12 @@ public class FishRadar : MonoBehaviour
             }
         }
      
+    }
+
+    public int RandomNum(int min,int max)
+    {
+       var r = Random.Range(min, max);
+
+       return r;
     }
 }
