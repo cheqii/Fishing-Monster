@@ -23,6 +23,16 @@ public class FisherManAnime : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) )
         {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+            bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+            if (hit &&  isOverUI == true)
+            {
+                Debug.Log("UI");
+                return;
+            }
+            
+            
             if (SwitchTool.Instance.ToolTypes == Tools.Rod)
             {
                 if(_rod.IsFishing == true) return;
