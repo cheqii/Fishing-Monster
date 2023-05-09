@@ -130,6 +130,8 @@ public class FishRadar : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.Instance == null) return;
+        
         if (GameManager.Instance.fishIsEating == false && _bait != null)
         {
             _bait.GetComponent<ShakyObject>().enabled = false;
