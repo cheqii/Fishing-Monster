@@ -20,15 +20,28 @@ public class SwitchTool : Singleton<SwitchTool>
     
     public void SwitchToRod()
     {
-        toolTypes = Tools.Rod;
         
-        FindObjectOfType<FisherManAnime>().Throw(1);
+        toolTypes = Tools.Rod;
+        CursorChanger.Instance.ChangeToRodeCursor();
+
+        
+        if(UiCheck() != true)
+        {
+            FindObjectOfType<FisherManAnime>().Throw(1);
+        }
+
     }
 
     public void SwitchToBomb()
     {
         toolTypes = Tools.Bomb;
         FindObjectOfType<FisherManAnime>().Cannon(1);
+        CursorChanger.Instance.ChangeTocannonCursor();
+
+        if(UiCheck() != true)
+        {
+            FindObjectOfType<FisherManAnime>().Throw(1);
+        }
 
     }
 
@@ -36,6 +49,28 @@ public class SwitchTool : Singleton<SwitchTool>
     {
         toolTypes = Tools.Hand;
         FindObjectOfType<FisherManAnime>().Throw(1);
+        CursorChanger.Instance.ChangeTohandCursor();
+
+        if(UiCheck() != true)
+        {
+            FindObjectOfType<FisherManAnime>().Throw(1);
+        }
+    }
+
+
+    public bool UiCheck()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+        bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+        if (hit &&  isOverUI == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
 
     }
 }
