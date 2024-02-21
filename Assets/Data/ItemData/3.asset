@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921ad03b47250b4459de3f88b0e96805, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  itemName: Shrimp
+  itemImage: {fileID: 21300000, guid: b89a7645984c6304d964a51babfeffe8, type: 3}
+  itemId: 2
+  price: 100
+  baitData: {fileID: 11400000, guid: 854004b623c68b2409dd7cdd1e30cbe6, type: 2}
+  isLocked: 1
